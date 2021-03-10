@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, user-scalable=0"/>
+        <link rel="stylesheet" type="text/css" href="../style/style-cadastro.css"/>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Montserrat:wght@300;400;800&family=Newsreader&display=swap" rel="stylesheet">
+        
+    </head>
+    <body> 
+        <aside> 
+            <div class="menu">
+                <div class="menu-box home" id="home"><a> 
+                    <div class="home-img"> <img src="../../img_icons/home-white-18dp.svg" height="60px"/> </div>
+                </a></div>
+
+                <div class="menu-box" id="logout"><a> 
+                    <img src="../../img_icons/logout-white-18dp.svg" height="40px"/> 
+                </a></div>    
+            </div>
+        </aside>
+        <main>
+            <div class="principal">
+                <div class="filler"></div>
+                <div class="container">
+                    <h1>Cadastro de usuário</h1>
+                    <form>
+                        <div class="form-box">
+                            <div class="formulario">
+                                <div class="form-item">
+                                    <h2> Nome completo:</h2>
+                                    <input type="text" name="nome">
+                                </div>
+                                <div class="form-item">
+                                    <h2> Email:</h2>
+                                    <input type="text" name="email">
+                                </div>
+                                <div class="form-item cpf">
+                                    <h2> CPF:</h2>
+                                    <input type="text" name="cpf">
+                                </div>
+                                <div class="form-item ra">
+                                    <h2> RA (Registro do aluno):</h2>
+                                    <input type="text" name="ra">
+                                </div>
+                            </div>
+                            <div class="formulario">
+                                <div class="form-item">
+                                    <h2> Senha: </h2>
+                                    <input type="text" name="senha">
+                                </div>
+                                <div class="form-item">
+                                    <h2> Confirme sua senha: </h2>
+                                    <input type="text" name="email">
+                                </div>
+                                <div class="form-item">
+                                    <h2> Tipo: </h2>
+                                    <select name="tipo">
+                                        <option value="autor">Autor</option>
+                                        <option value="avaliador">Avaliador</option>
+                                        <option value="secretaria">Secretaria</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "submit-box">
+                            <input type="submit" id="confirma" value="Confirmar cadastro">
+                            <input type="submit" id="cancela" value="Cancelar cadastro">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

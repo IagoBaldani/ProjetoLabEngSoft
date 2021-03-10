@@ -68,60 +68,12 @@ main{
 }
 
 
-.lower, .upper{
-    flex-direction: column;
-    flex: 1;
-    display: flex;
-}
-
-.lower{
-    justify-content: flex-end;
-
-}
-
-.upper{
-    justify-content: flex-start;
-}
-
-.profile-box{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    position: absolute;
-    left: -310px;
-    bottom: 50px;
-    width: 310px;
-    height: 210px;
-    background-color: #33383B;
-    border-radius: 10px;
-    padding: 15px;
-    transition: all linear 0.3s;
-}
-
-.profile-box-img{
-    border-radius: 30px;
-    height:60px;
-    box-shadow: 0 0 8px #222;
-}
-
-.profile-box h1{
-    font-size: 18px;
+.divisoria{
+    width: 280px;
+    height: 3px;
+    background-color: #707070;
     margin: 5px;
 }
-
-.profile-box h2{
-    font-size: 15px;
-    font-weight: lighter;
-    margin: 5px;
-    text-align: center;
-}
-
-.profile-box-data{
-    font-weight: bold;
-    display: flex;
-    margin: 10px;
-}
-
 
 
 /* *************************************************************************** */
@@ -148,7 +100,7 @@ main{
     flex-direction: column;
     padding:30px;
     height:100vh;
-    width: 900px;
+    width: 1000px;
 }
 
 .container h1{
@@ -158,37 +110,72 @@ main{
 }
 
 .container h2{
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 900;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
-.func{
+.form-box{
+    height: 450px;
+    width: 100%;
     display: flex;
-    align-items: center;
-    height: 220px;
+    justify-content: space-between;
 }
 
-.func-box{
-    width: 200px;
-    height: 200px;
-    background:linear-gradient(270deg, #26C6DA,#0288D1);
-    margin: 10px;
-    border-radius: 30px;
+.formulario{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    box-shadow: 0 0 15px #222;
-    transition: all linear 0.3s;
 }
 
-.func-box h2{
+.formulario input, .formulario select{
+    width: 400px;
+    height: 40px;
     font-size: 20px;
+    color: #282C2E;
+    padding: 5px;
 }
 
-
-.func-box:hover{
-    border: 5px solid #EEE;
+option{
+    color: #282C2E;
 }
+
+.submit-box{
+    display: flex;
+    height: 60px;
+    align-items: flex-end;
+}
+
+.submit-box input{
+    height: 50px;
+    width: 400px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.submit-box #confirma{
+    background-color: #20F808;
+    border-style: none;
+}
+
+.submit-box #cancela{
+    background-color: #FF3D00;
+    margin-left: 135px;
+    border-style: none;
+}
+
+.info-senha{
+    position: absolute;
+    background-color: #33383B;
+    display: flex;
+    padding: 10px;
+    width: 400px;
+    height: 75px;
+    right:15px;
+    top: 150px;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #333;
+}
+
