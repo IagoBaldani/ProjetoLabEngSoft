@@ -1,0 +1,154 @@
+/*   font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Newsreader', serif;
+*/
+
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    color:white;
+    text-decoration: none;
+}
+
+main{
+    display: flex
+}
+
+/* *************************************************************************** */
+/* *************************************************************************** */
+/* Estilização do menu lateral */
+/* *************************************************************************** */
+/* *************************************************************************** */
+
+.menu{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    height: 100vh;
+    background-color: #33383B;
+}
+
+.menu-box{
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    padding: 30px;
+    cursor: pointer;
+    transition: all linear 0.3s;
+}
+
+.menu-box:hover:not(.menu-box.home){
+    background:linear-gradient(90deg, #1976D2,#303F9F);
+    color: #33383B;
+    box-shadow: 0 0 15px #33383B;
+}
+
+.home-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4F575B;
+    height: 90px;
+    width: 90px;
+    border-radius: 45px;
+    cursor: pointer;
+}
+
+.home-img:hover{
+    background:linear-gradient(90deg, #1976D2,#303F9F);
+}
+
+
+
+
+/* *************************************************************************** */
+/* *************************************************************************** */
+/* Estilização do banner principal */
+/* *************************************************************************** */
+/* *************************************************************************** */
+
+.principal{
+    height: 100%;
+    flex: 1;
+    display: flex;
+    background-color: #282C2E;
+}
+
+.filler{
+    width: 100px;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    height:100%;
+    width: 90%;
+}
+
+.container h1{
+    font-size: 60px;
+    font-weight: lighter;
+    margin-bottom: 15px;
+}
+
+.container h2{
+    font-size: 25px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.item-area{
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100%;
+    width: 100%;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    background-color: #33383B;
+    height: 100px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+
+
+.id, .titulo, .participantes, .status{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 15px;
+}
+
+.id{
+    width: 200px;
+    border-right:3px solid #4F575B;
+}
+
+.titulo, .participantes{ 
+    border-right:3px solid #4F575B;
+    flex: 1;
+}
+
+.participantes, .status{
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex: 1;
+}
+
