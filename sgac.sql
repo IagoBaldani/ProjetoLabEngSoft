@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16-Mar-2021 às 22:35
+-- Tempo de geração: 16-Mar-2021 às 23:33
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.4.9
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `artigos` (
-  `cod_artigos` int(4) NOT NULL,
+  `cod_artigos` smallint(4) UNSIGNED NOT NULL,
   `autor` varchar(50) COLLATE utf8_bin NOT NULL,
   `orientador` varchar(50) COLLATE utf8_bin NOT NULL,
   `avaliador` varchar(50) COLLATE utf8_bin NOT NULL,
@@ -38,6 +38,15 @@ CREATE TABLE `artigos` (
   `curso` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+--
+-- Extraindo dados da tabela `artigos`
+--
+
+INSERT INTO `artigos` (`cod_artigos`, `autor`, `orientador`, `avaliador`, `status`, `data`, `titulo`, `curso`) VALUES
+(1, 'Marcelo Bolfarini', 'Iago Baldani', 'Igor Santander', 1, '2021-03-16', 'Sistema Gerenciador de Artigos Cientificos', 2),
+(2, 'Filipe Antunes', 'Gustavo Juliano', 'Marcelo Bolfarini', 2, '2021-03-16', 'Teste do Banco', 3),
+(3, 'Iago Baldani', 'Igor Santander', 'Filipe Antunes', 3, '2021-03-16', 'Teste do Banco 2', 5);
+
 -- --------------------------------------------------------
 
 --
@@ -45,12 +54,12 @@ CREATE TABLE `artigos` (
 --
 
 CREATE TABLE `usuario` (
-  `cod_usuario` int(4) NOT NULL,
+  `cod_usuario` smallint(4) UNSIGNED NOT NULL,
   `nome` varchar(50) COLLATE utf8_bin NOT NULL,
   `senha` varchar(20) COLLATE utf8_bin NOT NULL,
-  `cpf` int(20) NOT NULL,
+  `cpf` varchar(50) COLLATE utf8_bin NOT NULL DEFAULT '',
   `email` varchar(50) COLLATE utf8_bin NOT NULL,
-  `matricula` int(20) NOT NULL,
+  `matricula` varchar(50) COLLATE utf8_bin NOT NULL DEFAULT '',
   `tipo` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -59,7 +68,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`cod_usuario`, `nome`, `senha`, `cpf`, `email`, `matricula`, `tipo`) VALUES
-(2, 'Filipe Antunes', '1234', 2147483647, 'filipe-antunes@outlook.com', 2147483647, 2);
+(1, 'Filipe Antunes', '1234', '04566552554', 'filipe-antunes@outlook.com', '0210481913309', 2),
+(4, 'Marcelo Bolfarini', '12345', '25885445665', 'marcelo-bolfarini@hotmail.com', '0210485253054', 3);
 
 --
 -- Índices para tabelas despejadas
@@ -88,13 +98,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `artigos`
 --
 ALTER TABLE `artigos`
-  MODIFY `cod_artigos` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_artigos` smallint(4) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `cod_usuario` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cod_usuario` smallint(4) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restrições para despejos de tabelas
