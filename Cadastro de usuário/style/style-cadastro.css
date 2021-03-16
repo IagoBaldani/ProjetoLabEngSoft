@@ -98,9 +98,9 @@ main{
 .container{
     display: flex;
     flex-direction: column;
-    padding:30px;
+    padding:20px;
     height:100vh;
-    width: 1000px;
+    width: 70%;
 }
 
 .container h1{
@@ -117,7 +117,7 @@ main{
 }
 
 .form-box{
-    height: 450px;
+    height: 460px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -129,11 +129,12 @@ main{
 }
 
 .formulario input, .formulario select{
-    width: 400px;
+    width: 375px;
     height: 40px;
     font-size: 20px;
     color: #282C2E;
     padding: 5px;
+    border-style: none;
 }
 
 option{
@@ -144,37 +145,37 @@ option{
     display: flex;
     height: 60px;
     align-items: flex-end;
+    justify-content: space-between;
 }
 
 .submit-box input{
-    height: 50px;
-    width: 400px;
+    height: 40px;
+    width: 375px;
     border-radius: 5px;
     font-weight: bold;
     font-size: 25px;
+    border-style: none;
+    cursor: pointer;
 }
 
 .submit-box #confirma{
     background-color: #20F808;
-    border-style: none;
 }
 
 .submit-box #cancela{
     background-color: #FF3D00;
-    margin-left: 135px;
-    border-style: none;
 }
 
 .info-senha{
     opacity: 0;
-    position: absolute;
+    position: fixed;
     background-color: #33383B;
     display: flex;
     padding: 10px;
-    width: 400px;
+    width: 350px;
     height: 75px;
-    right:15px;
-    top: 150px;
+    top: 90px;
+    right: 170px;
     align-items: center;
     border-radius: 10px;
     box-shadow: 0 0 15px #333;
@@ -184,5 +185,3 @@ option{
 .i-senha{
     cursor: pointer;
 }
-
-

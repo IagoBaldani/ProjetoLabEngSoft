@@ -68,12 +68,6 @@ main{
 }
 
 
-.divisoria{
-    width: 280px;
-    height: 3px;
-    background-color: #707070;
-    margin: 5px;
-}
 
 
 /* *************************************************************************** */
@@ -129,6 +123,7 @@ main{
 }
 
 .formulario input, .formulario select{
+    background-color: #fff;
     width: 375px;
     height: 40px;
     font-size: 20px;
@@ -155,59 +150,38 @@ option{
     font-weight: bold;
     font-size: 25px;
     border-style: none;
-}
-
-.submit-box #confirma{
+    cursor: pointer;
     background-color: #20F808;
 }
 
-.submit-box #cancela{
-    background-color: #FF3D00;
-}
-
-
-.info-senha{
+.info-box, .info-box2{
     opacity: 0;
     position: fixed;
     background-color: #33383B;
     display: flex;
     padding: 10px;
-    width: 350px;
-    height: 75px;
-    top: 90px;
-    right: 170px;
+    width: 400px;
+    height: 55px;
+    margin: 5px;
     align-items: center;
     border-radius: 10px;
     box-shadow: 0 0 15px #333;
     transition: all linear 0.3s;
 }
 
-.i-senha{
+.info-box{
+    top: 100px;
+    left: 290px;
+}
+
+.info-box2{
+    right: 70px;
+}
+
+.info, .info2{
     cursor: pointer;
 }
 
-.container2{
-    height: 100vh;
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    align-items: flex-end;
-}
 
-.deleta{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    width: 300px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 25px;
-    border-style: none;
-    background-color: #FF0000;
-    margin-bottom: 10px;
-}
 
-.deleta img{
-    margin-right: 10px;
-}
+
