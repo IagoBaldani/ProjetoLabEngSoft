@@ -68,7 +68,7 @@
 	else if(isset($_POST['cancela'])){
 		echo"   <script>
                     let aux = confirm('Deseja mesmo cancelar o cadastro?');
-                    if(confirm){
+                    if(aux===true){
                         alert('Redirecionando para a página Home');
                         location.href='../../Home - Secretaria/index.html'; 
                     }
