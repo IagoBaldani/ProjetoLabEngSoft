@@ -12,7 +12,7 @@
 		echo "Falha na conexão: (".$mysqli->connect_errno.") ".$mysqli->connect_error;
 	}
 	else{
-		echo "Conectado!";
+		//echo "Conectado!";
 	}
 	
 ?>
