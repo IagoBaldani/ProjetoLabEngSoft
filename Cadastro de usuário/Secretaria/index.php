@@ -66,8 +66,13 @@
 		
 	}
 	else if(isset($_POST['cancela'])){
-		
-		echo"<script>location.href='../../Home - Secretaria/index.html'; </script>";
+		echo"   <script>
+                    let aux = confirm('Deseja mesmo cancelar o cadastro?');
+                    if(confirm){
+                        alert('Redirecionando para a página Home');
+                        location.href='../../Home - Secretaria/index.html'; 
+                    }
+                </script>";
 	}
 
 ?>
