@@ -69,7 +69,6 @@
 		echo"   <script>
                     let aux = confirm('Deseja mesmo cancelar o cadastro?');
                     if(aux===true){
-                        alert('Redirecionando para a página Home');
                         location.href='../../Home - Secretaria/index.html'; 
                     }
                 </script>";
