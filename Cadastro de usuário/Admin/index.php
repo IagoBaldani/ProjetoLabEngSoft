@@ -52,7 +52,7 @@
 				unset($_SESSION['nome'],
 					  $_SESSION['senha'],
 					  $_SESSION['cpf'],
-					  $_SESSION['emai'],
+					  $_SESSION['email'],
 					  $_SESSION['ra'],
 					  $_SESSION['tipo']);
 					  
