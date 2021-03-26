@@ -1,3 +1,16 @@
+<?php 
+    
+    include("../conexao.php");
+
+    $codigo_usuario = intval($_GET['id']);
+
+    $sql_code = "SELECT * FROM usuario WHERE cod_usuario = '$codigo_usuario'";
+    $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+    $dado = $sql_query->fetch_assoc();
+
+?>
+
+
 <html>
     <head>
         <meta charset="UTF-8"/>
@@ -11,11 +24,11 @@
     <body> 
         <aside> 
             <div class="menu">
-                <div class="menu-box home" id="home"><a> 
+                <div class="menu-box home" id="home"><a href="javascript:history.back()"> 
                     <div class="home-img"> <img src="../Imagens/home-white-18dp.svg" height="60px"/> </div>
                 </a></div>
 
-                <div class="menu-box" id="logout"><a> 
+                <div class="menu-box" id="logout"><a href="../logout.php"> 
                     <img src="../Imagens/logout-white-18dp.svg" height="40px"/> 
                 </a></div>    
             </div>
@@ -28,15 +41,15 @@
                     
                     <div class="info-box">
                         <h2>Nome:<h2>
-                        <p>Iago Baldani de Almeida</p>
+                        <p><?php echo $dado['nome'] ?></p>
                     </div>
                     <div class="info-box">
                         <h2>Email:<h2>
-                        <p>iago.almeida01@fatec.sp.gov.br</p>
+                        <p><?php echo $dado['email'] ?></p>
                     </div>
                     <div class="info-box">
                         <h2>RA (Registro do Aluno): <h2>
-                        <p>0210481913025</p>
+                        <p><?php echo $dado['matricula'] ?></p>
                     </div>
                     <div class="info-box">
                         <h2>Curso: <h2>

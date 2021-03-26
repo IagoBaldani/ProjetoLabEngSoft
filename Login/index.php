@@ -11,7 +11,7 @@ if(isset($_POST['email']) && strlen($_POST['email']) > 0){
 	$_SESSION['senha'] = md5(md5($_POST['senha']));
 
 	
-	$sql_code = "SELECT senha, email FROM usuario WHERE email = '$_SESSION[email]'";
+	$sql_code = "SELECT senha, email, tipo, cod_usuario FROM usuario WHERE email = '$_SESSION[email]'";
 	$sql_query = $mysqli->query($sql_code) or die($mysqli->error);
 	$dado = $sql_query->fetch_assoc();
 	$total = $sql_query->num_rows;
@@ -22,7 +22,7 @@ if(isset($_POST['email']) && strlen($_POST['email']) > 0){
 	else{
 		if($dado['senha'] == $_SESSION['senha']){
 		
-			$_SESSION['usuario'] = $dado['codigo'];
+			$_SESSION['usuario'] = $dado['cod_usuario'];
 			
 		}
 		else{
@@ -33,7 +33,18 @@ if(isset($_POST['email']) && strlen($_POST['email']) > 0){
 	}
 	
 	if(!isset($erro)){
-		echo "<script>alert('Login efetuado com sucesso'); location.href='../Home - Secretaria/index.html';</script>";
+        
+        if($dado['tipo']==1)
+		echo "<script>alert('Login efetuado com sucesso'); location.href='../Home - Admin/index.php?id={$dado['cod_usuario']}' ;</script>";
+
+        else if($dado['tipo']==2)
+		echo "<script>alert('Login efetuado com sucesso'); location.href='../Home - Autor/index.php?id={$dado['cod_usuario']}' ;</script>";
+
+        else if($dado['tipo']==3)
+		echo "<script>alert('Login efetuado com sucesso'); location.href='../Home - Avaliador_Orientador/index.php?id={$dado['cod_usuario']}';</script>";
+        
+        else if($dado['tipo']==4)
+		echo "<script>alert('Login efetuado com sucesso'); location.href='../Home - Secretaria/index.php?id={$dado['cod_usuario']}';</script>";
 	}
 
 }

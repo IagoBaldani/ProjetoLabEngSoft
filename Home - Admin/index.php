@@ -1,3 +1,16 @@
+<?php 
+    
+    include("../conexao.php");
+
+    $codigo_usuario = intval($_GET['id']);
+
+    $sql_code = "SELECT nome FROM usuario WHERE cod_usuario = '$codigo_usuario'";
+    $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+    $dado = $sql_query->fetch_assoc();
+
+
+?>
+
 <html>
     <head>
         <meta charset="UTF-8"/>
@@ -12,7 +25,7 @@
         <aside> 
             <div class="menu">
                 <div class="upper">
-                    <div class="menu-box home" id="home"><a href="index.html"> 
+                    <div class="menu-box home" id="home"><a href="index.php?id=<?php echo $codigo_usuario ?>"> 
                         <div class="home-img"> <img src="../Imagens/home-white-18dp.svg" height="60px"/> </div>
                     </a></div>
                 </div>
@@ -22,10 +35,10 @@
                     <div class="profile-box">
                         <img class="profile-box-img" src="../Imagens/p-picture.jpeg"> 
                         
-                        <h1>Iago Baldani de Almeida</h1>
+                        <h1><?php echo $dado['nome']; ?></h1>
                         <h2>Análise e Desenvolvimento de Sistemas</h2>
                         
-                        <a href=""><div class="profile-box-data"> 
+                        <a href="../Dados do perfil/index.php?id=<?php echo $codigo_usuario?>"><div class="profile-box-data"> 
                             <img src="../Imagens/article-white-18dp.svg" height="20px">
                             Dados do perfil
                         </div></a>
