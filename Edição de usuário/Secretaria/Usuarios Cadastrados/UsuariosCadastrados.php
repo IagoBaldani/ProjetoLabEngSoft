@@ -1,6 +1,8 @@
 <?php 
     include("../../../conexao.php");
 
+    $id_usuario = intval($_GET['id']);
+
     $sql_code = "SELECT * FROM usuario";
     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
     $linha = $sql_query->fetch_assoc();
@@ -20,7 +22,7 @@
     <body> 
         <aside> 
             <div class="menu">
-                <div class="menu-box home" id="home"><a href="../../../Home - Secretaria/index.html"> 
+                <div class="menu-box home" id="home"><a href="javascript:history.back()"> 
                     <div class="home-img"> <img src="../../../Imagens/home-white-18dp.svg" height="60px"/> </div>
                 </a></div>
 
@@ -65,7 +67,7 @@
                                     }
                                 ?></td>
                             <td>
-                                <a href="../index.php?usuario=<?php echo $linha['cod_usuario']; ?>">Editar</a>
+                                <a href="../index.php?usuario=<?php echo $linha['cod_usuario']; ?>&id=<?php echo $id_usuario; ?>">Editar</a>
                             </td>
                         </tr>
                         <?php } while($linha = $sql_query->fetch_assoc()); ?>

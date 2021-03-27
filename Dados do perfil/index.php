@@ -8,6 +8,14 @@
     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
     $dado = $sql_query->fetch_assoc();
 
+    $sql_code = "SELECT nome FROM cursos WHERE cod_cursos = '$dado[curso]'";
+    $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+    $linha = $sql_query->fetch_assoc();
+
+    $sql_code = "SELECT tipo FROM tipousuario WHERE cod_tipo = '$dado[tipo]'";
+    $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+    $linha2 = $sql_query->fetch_assoc();
+
 ?>
 
 
@@ -51,15 +59,22 @@
                         <h2>RA (Registro do Aluno): <h2>
                         <p><?php echo $dado['matricula'] ?></p>
                     </div>
-                    <div class="info-box">
-                        <h2>Curso: <h2>
-                        <p>Análise e Desenvolvimento de Sistemas</p>
-                    </div>
+                    
+                        
+                        <div class="info-box">
+                        
+                       
+                            <h2><?php if($dado['tipo']==2){echo 'Curso:'; }else{echo $linha2['tipo'];} ?><h2>
+                            <p><?php if($dado['tipo']==2){echo $linha['nome'];} ?></p>
+                        
+                        </div>
+                        
+                    
                 </div>
                 <div class="container2">
                     <div class="info-box">
                         <h2>Data de cadastro: <h2>
-                        <p>10/03/2021</p>
+                        <p><?php echo $dado['datacadastro'] ?></p>
                     </div>
                 </div>
             </div>

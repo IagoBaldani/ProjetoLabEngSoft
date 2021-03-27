@@ -1,7 +1,8 @@
 <?php
 
 	include("../../conexao.php");
-	
+
+    $id_usuario = intval($_GET['id']);
 		
 	if(isset($_POST['confirma'])){
 		
@@ -56,7 +57,7 @@
 					  $_SESSION['ra'],
 					  $_SESSION['tipo']);
 					  
-					  echo"<script>alert('Usuário cadastrado com sucesso!');  location.href='../../Home - Admin/index.html'; </script>";
+					  echo"<script>alert('Usuário cadastrado com sucesso!');  location.href='../../Home - Admin/index.php?id={$id_usuario}'; </script>";
 					  
 			}
 			else 
@@ -67,10 +68,9 @@
 	}
 	else if(isset($_POST['cancela'])){
 		echo"   <script>
-                    let aux = confirm('Deseja mesmo cancelar o cadastro?');
-                    if(aux===true){
-                        location.href='../../Home - Admin/index.html'; 
-                    }
+                     if(confirm('Deseja mesmo cancelar o cadastro?')){
+                     location.href='../../Home - Admin/index.php?id={$id_usuario}';
+                     }else{history.back()}
                 </script>";
 	}
 
@@ -89,7 +89,7 @@
     <body> 
         <aside> 
             <div class="menu">
-                <div class="menu-box home" id="home"><a href="../../Home - Admin/index.html"> 
+                <div class="menu-box home" id="home"><a href="javascript:history.back()"> 
                     <div class="home-img"> <img src="../../Imagens/home-white-18dp.svg" height="60px"/> </div>
                 </a></div>
 

@@ -2,12 +2,19 @@
     
     include("../conexao.php");
 
-    $codigo_usuario = intval($_GET['id']);
+    $id_usuario = intval($_GET['id']);
 
-    $sql_code = "SELECT nome FROM usuario WHERE cod_usuario = '$codigo_usuario'";
+    $sql_code = "SELECT * FROM usuario WHERE cod_usuario = '$id_usuario'";
     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
     $dado = $sql_query->fetch_assoc();
 
+    $sql_code = "SELECT nome FROM cursos WHERE cod_cursos = '$dado[curso]'";
+    $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+    $linha = $sql_query->fetch_assoc();
+
+    $sql_code = "SELECT tipo FROM tipousuario WHERE cod_tipo = '$dado[tipo]'";
+    $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+    $linha2 = $sql_query->fetch_assoc();
 
 ?>
 
@@ -25,7 +32,7 @@
         <aside> 
             <div class="menu">
                 <div class="upper">
-                    <div class="menu-box home" id="home"><a href="index.php?id=<?php echo $codigo_usuario ?>"> 
+                    <div class="menu-box home" id="home"><a href="index.php?id=<?php echo $id_usuario ?>"> 
                         <div class="home-img"> <img src="../Imagens/home-white-18dp.svg" height="60px"/> </div>
                     </a></div>
                 </div>
@@ -36,9 +43,9 @@
                         <img class="profile-box-img" src=""> 
                         
                         <h1><?php echo $dado['nome']; ?></h1>
-                        <h2>Análise e Desenvolvimento de Sistemas</h2>
+                        <h2><?php if($dado['tipo']==2){echo $linha['nome'];}else{echo $linha2['tipo'];}?></h2>
                     
-                        <a href="../Dados do perfil/index.php?id=<?php echo $codigo_usuario?>"><div class="profile-box-data"> 
+                        <a href="../Dados do perfil/index.php?id=<?php echo $id_usuario?>"><div class="profile-box-data"> 
                             <img src="../Imagens/article-white-18dp.svg" height="20px">
                             Dados do perfil
                         </div></a>

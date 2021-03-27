@@ -3,6 +3,7 @@
 	include("../../conexao.php");
 	
     $codigo_usuario = intval($_GET['usuario']);
+    $id_usuario = intval($_GET['id']);
 		
 	if(isset($_POST['confirma'])){
 		
@@ -63,7 +64,7 @@
 					  $_SESSION['emai'],
 					  $_SESSION['ra']);
 					  
-					  echo"<script>alert('Usuário editado com sucesso!');  location.href='../../Home - Admin/index.html'; </script>";
+					  echo"<script>alert('Usuário editado com sucesso!');  location.href='../../Home - Admin/index.php?id={$id_usuario}'; </script>";
 					  
 			}
 			else 
@@ -74,10 +75,9 @@
 	}
 	else if(isset($_POST['cancela'])){
 		echo"   <script>
-                    let aux = confirm('Deseja mesmo cancelar a edição?');
-                    if(aux===true){
-                        location.href='../../Home - Admin/index.html'; 
-                    }
+                    if(confirm('Deseja mesmo cancelar o cadastro?')){
+                    location.href='../../Home - Admin/index.php?id={$id_usuario}';
+                    }else{history.back()}
                 </script>";
 	}
     else{
@@ -115,7 +115,7 @@
     <body> 
         <aside> 
             <div class="menu">
-                <div class="menu-box home" id="home"><a href="../../Home - Admin/index.html"> 
+                <div class="menu-box home" id="home"><a href="../../Home - Admin/index.php?id=<?php echo $id_usuario;?>"> 
                     <div class="home-img"> <img src="../../Imagens/home-white-18dp.svg" height="60px"/> </div>
                 </a></div>
 
@@ -176,7 +176,7 @@
                     </form>
                 </div>
                 <div class="container2">
-                    <a href="javascript: if(confirm('Tem certeza que deseja deletar o usuário <?php echo $linha['nome']; ?>')) location.href='deletar.php?usuario=<?php echo $codigo_usuario; ?>';">
+                    <a href="javascript: if(confirm('Tem certeza que deseja deletar o usuário <?php echo $linha['nome']; ?>')) location.href='deletar.php?usuario=<?php echo $codigo_usuario; ?>&id=<?php echo $id_usuario;?>';">
                         <div class="deleta"> <img src="../../Imagens/delete-white-18dp.svg" height="30px">
                             Deletar usuário 
                         </div>
