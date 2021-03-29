@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Mar-2021 às 17:36
+-- Tempo de geração: 29-Mar-2021 às 21:11
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.4.9
 
@@ -126,16 +126,21 @@ CREATE TABLE `usuario` (
   `cpf` varchar(50) COLLATE utf8_bin NOT NULL DEFAULT '',
   `email` varchar(50) COLLATE utf8_bin NOT NULL,
   `matricula` varchar(50) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `tipo` int(11) NOT NULL DEFAULT 0
+  `tipo` int(11) NOT NULL DEFAULT 0,
+  `curso` int(11) DEFAULT NULL,
+  `datacadastro` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`cod_usuario`, `nome`, `senha`, `cpf`, `email`, `matricula`, `tipo`) VALUES
-(16, 'Igor Santander', '70873e8580c9900986939611618d7b1e', '0542445845487', 'igorsantander@gmail.com', '545854778596654', 4),
-(17, 'Filipe Antuness', 'a567d260dcce27322dc9403161f8ab91', '251445556665', 'filipeantunes@gmail.com', '558885554447', 3);
+INSERT INTO `usuario` (`cod_usuario`, `nome`, `senha`, `cpf`, `email`, `matricula`, `tipo`, `curso`, `datacadastro`) VALUES
+(16, 'Igor Santander', '70873e8580c9900986939611618d7b1e', '333333333', 'igorsantander@gmail.com', '4444444444', 4, NULL, '2021-03-25'),
+(18, 'Admin 1', '5d80253b1cd5e5d4ca5ed539f4d72052', '25444566658', 'admin1@gmail.com', '458854556998', 1, NULL, '2021-03-26'),
+(19, 'Filipe Antunes', 'a567d260dcce27322dc9403161f8ab91', '25444555669', 'filipeantunes@gmail.com', '658554445558', 2, 3, '2021-03-26'),
+(20, 'Marcelo Bolfarini', '70873e8580c9900986939611618d7b1e', '54589658586', 'marcelobolfarini@gmail.com', '656585658566', 3, NULL, '2021-03-26'),
+(22, 'Gustavo Juliano', '70873e8580c9900986939611618d7b1e', '554445588865', 'gustavojuliano@gmail.com', '55566558877444', 2, 4, '2021-03-27');
 
 --
 -- Índices para tabelas despejadas
@@ -146,7 +151,6 @@ INSERT INTO `usuario` (`cod_usuario`, `nome`, `senha`, `cpf`, `email`, `matricul
 --
 ALTER TABLE `artigos`
   ADD PRIMARY KEY (`cod_artigos`),
-  ADD KEY `curso` (`curso`),
   ADD KEY `status` (`status`);
 
 --
@@ -172,7 +176,8 @@ ALTER TABLE `tipousuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`cod_usuario`),
-  ADD KEY `tipo` (`tipo`);
+  ADD KEY `tipo` (`tipo`),
+  ADD KEY `curso` (`curso`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -206,7 +211,7 @@ ALTER TABLE `tipousuario`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `cod_usuario` smallint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `cod_usuario` smallint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Restrições para despejos de tabelas
@@ -216,13 +221,13 @@ ALTER TABLE `usuario`
 -- Limitadores para a tabela `artigos`
 --
 ALTER TABLE `artigos`
-  ADD CONSTRAINT `fkcurso` FOREIGN KEY (`curso`) REFERENCES `cursos` (`cod_cursos`) ON UPDATE CASCADE,
   ADD CONSTRAINT `fkstatus` FOREIGN KEY (`status`) REFERENCES `statusartigo` (`cod_status`) ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `usuario`
 --
 ALTER TABLE `usuario`
+  ADD CONSTRAINT `fkcurso` FOREIGN KEY (`curso`) REFERENCES `cursos` (`cod_cursos`) ON UPDATE CASCADE,
   ADD CONSTRAINT `fktipo` FOREIGN KEY (`tipo`) REFERENCES `tipousuario` (`cod_tipo`) ON UPDATE CASCADE;
 COMMIT;
 
