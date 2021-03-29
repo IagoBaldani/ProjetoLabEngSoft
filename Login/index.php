@@ -35,16 +35,16 @@ if(isset($_POST['email']) && strlen($_POST['email']) > 0){
 	if(!isset($erro)){
         
         if($dado['tipo']==1)
-		echo "<script>alert('Login efetuado com sucesso'); location.href='../Home - Admin/index.php?id={$dado['cod_usuario']}' ;</script>";
+		echo "<script> location.href='../Home - Admin/index.php?id={$dado['cod_usuario']}'; </script>";
 
         else if($dado['tipo']==2)
-		echo "<script>alert('Login efetuado com sucesso'); location.href='../Home - Autor/index.php?id={$dado['cod_usuario']}' ;</script>";
+		echo "<script> location.href='../Home - Autor/index.php?id={$dado['cod_usuario']}'; </script>";
 
         else if($dado['tipo']==3)
-		echo "<script>alert('Login efetuado com sucesso'); location.href='../Home - Avaliador_Orientador/index.php?id={$dado['cod_usuario']}';</script>";
+		echo "<script> location.href='../Home - Avaliador_Orientador/index.php?id={$dado['cod_usuario']}'; </script>";
         
         else if($dado['tipo']==4)
-		echo "<script>alert('Login efetuado com sucesso'); location.href='../Home - Secretaria/index.php?id={$dado['cod_usuario']}';</script>";
+		echo "<script> location.href='../Home - Secretaria/index.php?id={$dado['cod_usuario']}'; </script>";
 	}
 
 }
@@ -74,7 +74,8 @@ if(isset($_POST['email']) && strlen($_POST['email']) > 0){
 								
 								<?php if(isset($erro))
 										foreach($erro as $msg){
-											echo "<p>$msg</p>";
+											echo "<script> document.querySelector('.login').style.opacity = '1'; </script>";
+                                            echo "<p>$msg</p>";
 										}
 								?>
                             </form>

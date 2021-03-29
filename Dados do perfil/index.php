@@ -62,14 +62,10 @@
                     
                         
                         <div class="info-box">
-                        
-                       
-                            <h2><?php if($dado['tipo']==2){echo 'Curso:'; }else{echo $linha2['tipo'];} ?><h2>
-                            <p><?php if($dado['tipo']==2){echo $linha['nome'];} ?></p>
-                        
+                            <h2><?php if($dado['tipo']==2){echo 'Curso:'; }else{echo 'Tipo de conta:';} ?></h2>
+                            <p><?php if($dado['tipo']!=2){echo $linha2['tipo'];} ?></p>
                         </div>
                         
-                    
                 </div>
                 <div class="container2">
                     <div class="info-box">

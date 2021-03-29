@@ -8,9 +8,9 @@
     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
     $dado = $sql_query->fetch_assoc();
 
-    $sql_code = "SELECT nome FROM cursos WHERE cod_cursos = '$dado[curso]'";
-    $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
-    $linha = $sql_query->fetch_assoc();
+    //$sql_code = "SELECT nome FROM cursos WHERE cod_cursos = '$dado[curso]'";
+    //$sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+    //$linha = $sql_query->fetch_assoc();
 
     $sql_code = "SELECT tipo FROM tipousuario WHERE cod_tipo = '$dado[tipo]'";
     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);

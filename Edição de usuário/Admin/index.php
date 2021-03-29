@@ -106,7 +106,7 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, user-scalable=0"/>
-        <link rel="stylesheet" type="text/css" href="style-edicao.css"/>
+        <link rel="stylesheet" type="text/css" href="../style-edicao.css"/>
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Montserrat:wght@300;400;800&family=Newsreader&display=swap" rel="stylesheet">
@@ -176,7 +176,7 @@
                     </form>
                 </div>
                 <div class="container2">
-                    <a href="javascript: if(confirm('Tem certeza que deseja deletar o usuário <?php echo $linha['nome']; ?>')) location.href='deletar.php?usuario=<?php echo $codigo_usuario; ?>&id=<?php echo $id_usuario;?>';">
+                    <a href="javascript: if(confirm('Tem certeza que deseja deletar o usuário <?php echo $linha['nome']; ?> ?')) location.href='deletar.php?usuario=<?php echo $codigo_usuario; ?>&id=<?php echo $id_usuario;?>';">
                         <div class="deleta"> <img src="../../Imagens/delete-white-18dp.svg" height="30px">
                             Deletar usuário 
                         </div>
