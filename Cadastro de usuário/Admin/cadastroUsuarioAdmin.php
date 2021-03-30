@@ -3,7 +3,7 @@
 	include("../../conexao.php");
 
     $id_usuario = intval($_GET['id']);
-	
+		
 	if(isset($_POST['confirma'])){
 		
 		//1 - Registro dos dados
@@ -32,26 +32,23 @@
 		
 		if(strcmp($_SESSION['senha'], $_SESSION['senha-confirm']) != 0)
 			$erro[] = "As senhas não batem.";
-
-        if($_SESSION['curso'] === ''){
-            $_SESSION['curso'] = 'NULL';
-        }
 		
 		//3 - Inserção no Banco e redirecionamento
 		if(!isset($erro)){
 			
 			$senha = md5(md5($_SESSION['senha']));
 			
-			$sql_code = "INSERT INTO usuario (nome, senha, cpf, email, matricula, tipo, curso, datacadastro)
+			$sql_code = "INSERT INTO usuario (nome, senha, cpf, email, matricula, tipo)
 							VALUES( '$_SESSION[nome]',
 									'$senha',
 									'$_SESSION[cpf]',
 									'$_SESSION[email]',
 									'$_SESSION[ra]',
 									'$_SESSION[tipo]',
-                                    '$_SESSION[curso]',
+									'$_SESSION[curso]',
                                      NOW()
 									)";
+								
 									
 			$confirma = $mysqli->query($sql_code) or die($mysqli->error);
 			
@@ -62,9 +59,9 @@
 					  $_SESSION['email'],
 					  $_SESSION['ra'],
 					  $_SESSION['tipo'],
-                      $_SESSION['curso']);
+					  $_SESSION['curso']);
 					  
-					  echo"<script>alert('Usuário cadastrado com sucesso!');  location.href='../../Home - Secretaria/index.php?id={$id_usuario}'; </script>";
+					  echo"<script>alert('Usuário cadastrado com sucesso!');  location.href='../../Home - Admin/index.php?id={$id_usuario}'; </script>";
 					  
 			}
 			else 
@@ -75,10 +72,9 @@
 	}
 	else if(isset($_POST['cancela'])){
 		echo"   <script>
-                    if(confirm('Deseja mesmo cancelar o cadastro?')){
-                    location.href='../../Home - Secretaria/index.php?id={$id_usuario}';
-                    }else{history.back()}
-
+                     if(confirm('Deseja mesmo cancelar o cadastro?')){
+                     location.href='../../Home - Admin/index.php?id={$id_usuario}';
+                     }else{history.back()}
                 </script>";
 	}
 
@@ -88,7 +84,7 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, user-scalable=0"/>
-        <link rel="stylesheet" type="text/css" href="../style/style-cadastro.css"/>
+        <link rel="stylesheet" type="text/css" href="../style-cadastro.css"/>
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Montserrat:wght@300;400;800&family=Newsreader&display=swap" rel="stylesheet">
@@ -111,7 +107,7 @@
                 <div class="filler"></div>
                 <div class="container">
                     <h1>Cadastro de usuário</h1>
-					<?php 
+                    <?php 
 						if(isset($erro)){
 						echo"<div class='erro'>";
 						foreach($erro as $valor) 
@@ -142,12 +138,12 @@
                             <div class="formulario">
                                 <div class="form-item">
                                     <h2> Senha: <img class="i-senha" src="../../Imagens/info-white-18dp.svg" height="20px"> </h2>
-                                    <input type="password" name="senha">
+                                    <input type="text" name="senha">
                                     <div class="info-senha"> Sua senha deve conter pelo menos 8 caracteres e no máximo 20 caracteres.</div>
                                 </div>
                                 <div class="form-item">
                                     <h2> Confirme sua senha: </h2>
-                                    <input type="password" name="senha-confirm">
+                                    <input type="text" name="senha-confirm">
                                 </div>
                                 <div class="form-item">
                                     <h2> Tipo: </h2>
@@ -155,10 +151,10 @@
                                         <option value="2" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 2) echo "selected";} ?>>Autor</option>
                                         <option value="3" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 3) echo "selected";} ?>>Avaliador</option>
                                         <option value="4" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 4) echo "selected";} ?>>Secretaria</option>
+                                        <option value="1" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 1) echo "selected";} ?>>Admin</option>
                                     </select>
                                 </div>
-                               
-                                    <div class="form-item">
+								<div class="form-item">
                                         <h2> Curso: </h2>
                                         <select name="curso">
                                              <option value="" >Nenhum</option>
@@ -170,7 +166,6 @@
                                              <option value="6" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 6) echo "selected";} ?>>Gestão Empresarial</option>
                                         </select>
                                     </div>
-                                
                             </div>
                         </div>
                         <div class = "submit-box">
