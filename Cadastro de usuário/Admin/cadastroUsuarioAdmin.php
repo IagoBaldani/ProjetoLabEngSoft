@@ -61,7 +61,7 @@
 					  $_SESSION['tipo'],
 					  $_SESSION['curso']);
 					  
-					  echo"<script>alert('Usuário cadastrado com sucesso!');  location.href='../../Home - Admin/index.php?id={$id_usuario}'; </script>";
+					  echo"<script>alert('Usuário cadastrado com sucesso!');  location.href='../../Home - Admin/homeAdmin.php?id={$id_usuario}'; </script>";
 					  
 			}
 			else 
@@ -73,7 +73,7 @@
 	else if(isset($_POST['cancela'])){
 		echo"   <script>
                      if(confirm('Deseja mesmo cancelar o cadastro?')){
-                     location.href='../../Home - Admin/index.php?id={$id_usuario}';
+                     location.href='../../Home - Admin/homeAdmin.php?id={$id_usuario}';
                      }else{history.back()}
                 </script>";
 	}

@@ -33,7 +33,7 @@
         <aside> 
             <div class="menu">
                 <div class="upper">
-                    <div class="menu-box home" id="home"><a href="index.php?id=<?php echo $id_usuario ?>"> 
+                    <div class="menu-box home" id="home"><a href="homeSecretaria.php?id=<?php echo $id_usuario ?>"> 
                         <div class="home-img"> <img src="../Imagens/home-white-18dp.svg" height="60px"/> </div>
                     </a></div>
                 </div>
@@ -62,7 +62,7 @@
                     <h1>Central de gerenciamento</h1>
                     <h2>Manter usuários:</h2>
                     <div class="func">
-                        <a href="../Cadastro de usuário/Secretaria/index.php?id=<?php echo $id_usuario; ?>"><div class="func-box first">
+                        <a href="../Cadastro de usuário/Secretaria/cadastroUsuarioSecretaria.php?id=<?php echo $id_usuario; ?>"><div class="func-box first">
                             <img src="../Imagens/article-white-18dp.svg" height="75px">
                             <h2>Cadastrar usuário</h2>
                         </div></a>

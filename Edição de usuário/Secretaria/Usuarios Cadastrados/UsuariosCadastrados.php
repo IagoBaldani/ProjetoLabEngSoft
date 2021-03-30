@@ -67,7 +67,7 @@
                                     }
                                 ?></td>
                             <td>
-                                <a href="../index.php?usuario=<?php echo $linha['cod_usuario']; ?>&id=<?php echo $id_usuario; ?>">Editar</a>
+                                <a href="../edicaoUsuarioSecretaria.php?usuario=<?php echo $linha['cod_usuario']; ?>&id=<?php echo $id_usuario; ?>">Editar</a>
                             </td>
                         </tr>
                         <?php } while($linha = $sql_query->fetch_assoc()); ?>

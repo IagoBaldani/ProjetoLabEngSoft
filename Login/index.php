@@ -35,16 +35,16 @@ if(isset($_POST['email']) && strlen($_POST['email']) > 0){
 	if(!isset($erro)){
         
         if($dado['tipo']==1)
-		echo "<script> location.href='../Home - Admin/index.php?id={$dado['cod_usuario']}'; </script>";
+		echo "<script> location.href='../Home - Admin/homeAdmin.php?id={$dado['cod_usuario']}'; </script>";
 
         else if($dado['tipo']==2)
-		echo "<script> location.href='../Home - Autor/index.php?id={$dado['cod_usuario']}'; </script>";
+		echo "<script> location.href='../Home - Autor/homeAutor.php?id={$dado['cod_usuario']}'; </script>";
 
         else if($dado['tipo']==3)
-		echo "<script> location.href='../Home - Avaliador_Orientador/index.php?id={$dado['cod_usuario']}'; </script>";
+		echo "<script> location.href='../Home - Avaliador_Orientador/homeAvaliadorOrientador.php?id={$dado['cod_usuario']}'; </script>";
         
         else if($dado['tipo']==4)
-		echo "<script> location.href='../Home - Secretaria/index.php?id={$dado['cod_usuario']}'; </script>";
+		echo "<script> location.href='../Home - Secretaria/homeSecretaria.php?id={$dado['cod_usuario']}'; </script>";
 	}
 
 }

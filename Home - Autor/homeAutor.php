@@ -32,7 +32,7 @@
         <aside> 
             <div class="menu">
                 <div class="upper">
-                    <div class="menu-box home" id="home"><a href="index.php?id=<?php echo $id_usuario ?>"> 
+                    <div class="menu-box home" id="home"><a href="homeAutor.php?id=<?php echo $id_usuario ?>"> 
                         <div class="home-img"> <img src="../Imagens/home-white-18dp.svg" height="60px"/> </div>
                     </a></div>
                 </div>
@@ -46,7 +46,7 @@
                         <h2><?php if($dado['tipo']==2){echo $linha['nome'];}else{echo $linha2['tipo'];}?></h2>
                         
                         <div class="divisoria"></div>
-                        <a href="../Dados do perfil/index.php?id=<?php echo $id_usuario?>"><div class="profile-box-data"> 
+                        <a href="../Dados do perfil/dadosPerfil.php?id=<?php echo $id_usuario?>"><div class="profile-box-data"> 
                             <img src="../Imagens/article-white-18dp.svg" height="20px">
                             Dados do perfil
                         </div></a>
