@@ -38,7 +38,7 @@
 			
 			$senha = md5(md5($_SESSION['senha']));
 			
-			$sql_code = "INSERT INTO usuario (nome, senha, cpf, email, matricula, tipo)
+			$sql_code = "INSERT INTO usuario (nome, senha, cpf, email, matricula, tipo, curso, datacadastro)
 							VALUES( '$_SESSION[nome]',
 									'$senha',
 									'$_SESSION[cpf]',
