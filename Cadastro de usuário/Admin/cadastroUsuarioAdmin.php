@@ -148,16 +148,15 @@
                                 <div class="form-item">
                                     <h2> Tipo: </h2>
                                     <select name="tipo">
+                                        <option value="1" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 1) echo "selected";} ?>>Admin</option>
                                         <option value="2" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 2) echo "selected";} ?>>Autor</option>
                                         <option value="3" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 3) echo "selected";} ?>>Avaliador</option>
                                         <option value="4" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 4) echo "selected";} ?>>Secretaria</option>
-                                        <option value="1" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 1) echo "selected";} ?>>Admin</option>
                                     </select>
                                 </div>
 								<div class="form-item">
                                         <h2> Curso: </h2>
                                         <select name="curso">
-                                             <option value="" >Nenhum</option>
                                              <option value="1" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 1) echo "selected";} ?>>Agronegócio</option>
                                              <option value="2" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 2) echo "selected";} ?>>Analise e Desenvolvimento de Sistemas</option>
                                              <option value="3" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 3) echo "selected";} ?>>Jogos Digitais</option>
@@ -165,7 +164,7 @@
                                              <option value="5" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 5) echo "selected";} ?>>Ciência de Dados</option>
                                              <option value="6" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 6) echo "selected";} ?>>Gestão Empresarial</option>
                                         </select>
-                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class = "submit-box">
