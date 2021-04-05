@@ -177,11 +177,13 @@
                     </form>
                 </div>
                 <div class="container2">
-                    <a href="javascript: if(confirm('Tem certeza que deseja deletar o usuário <?php echo $linha['nome']; ?>')) location.href='deletar.php?usuario=<?php echo $codigo_usuario; ?>&id=<?php echo $id_usuario;?>';">
-                        <div class="deleta"> <img src="../../Imagens/delete-white-18dp.svg" height="30px">
-                            Deletar usuário 
-                        </div>
-                    </a>
+                    <div class="deleta-box">
+                        <a href="javascript: if(confirm('Tem certeza que deseja deletar o usuário <?php echo $linha['nome']; ?>')) location.href='deletarUsuarioSecretaria.php?usuario=<?php echo $codigo_usuario; ?>&id=<?php echo $id_usuario;?>';">
+                            <div class="deleta"> <img src="../../Imagens/delete-white-18dp.svg" height="30px">
+                                Deletar usuário 
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </main>

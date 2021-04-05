@@ -67,7 +67,7 @@
                             <img src="../Imagens/article-white-18dp.svg" height="75px">
                             <h2>Cadastrar usuário</h2>
                         </div></a>
-                        <a href="../Edição de usuário/Admin/Usuarios Cadastrados/UsuariosCadastrados.php?id=<?php echo $id_usuario; ?>"><div class="func-box">
+                        <a href="../Edição de usuário/Admin/UsuariosCadastrados.php?id=<?php echo $id_usuario; ?>"><div class="func-box">
                             <img src="../Imagens/article-white-18dp.svg" height="75px">
                             <h2>Editar usuário</h2>
                         </div></a>

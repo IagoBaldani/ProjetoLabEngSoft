@@ -88,7 +88,6 @@
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Montserrat:wght@300;400;800&family=Newsreader&display=swap" rel="stylesheet">
-        
     </head>
     <body> 
         <aside> 
@@ -145,18 +144,19 @@
                                     <h2> Confirme sua senha: </h2>
                                     <input type="text" name="senha-confirm">
                                 </div>
-                                <div class="form-item">
+                                <div id="type" class="form-item">
                                     <h2> Tipo: </h2>
                                     <select name="tipo">
-                                        <option value="1" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 1) echo "selected";} ?>>Admin</option>
-                                        <option value="2" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 2) echo "selected";} ?>>Autor</option>
-                                        <option value="3" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 3) echo "selected";} ?>>Avaliador</option>
-                                        <option value="4" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 4) echo "selected";} ?>>Secretaria</option>
+                                        <option id="1t" value="2" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 2) echo "selected";} ?>>Autor</option>
+                                        <option id="2t" value="3" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 3) echo "selected";} ?>>Avaliador/Orientador</option>
+                                        <option id="3t" value="4" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 4) echo "selected";} ?>>Secretaria</option>
+                                        <option id="4t" value="1" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 1) echo "selected";} ?>>Admin</option>
                                     </select>
                                 </div>
-								<div class="form-item">
+								<div id="curso" class="form-item">
                                         <h2> Curso: </h2>
                                         <select name="curso">
+                                             <option value="" >Nenhum</option>
                                              <option value="1" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 1) echo "selected";} ?>>Agronegócio</option>
                                              <option value="2" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 2) echo "selected";} ?>>Analise e Desenvolvimento de Sistemas</option>
                                              <option value="3" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 3) echo "selected";} ?>>Jogos Digitais</option>

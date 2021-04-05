@@ -149,16 +149,16 @@
                                     <h2> Confirme sua senha: </h2>
                                     <input type="password" name="senha-confirm">
                                 </div>
-                                <div class="form-item">
+                                <div id="type" class="form-item">
                                     <h2> Tipo: </h2>
                                     <select name="tipo">
-                                        <option value="2" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 2) echo "selected";} ?>>Autor</option>
-                                        <option value="3" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 3) echo "selected";} ?>>Avaliador</option>
-                                        <option value="4" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 4) echo "selected";} ?>>Secretaria</option>
+                                        <option id="1t" value="2" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 2) echo "selected";} ?>>Autor</option>
+                                        <option id="2t" value="3" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 3) echo "selected";} ?>>Avaliador</option>
+                                        <option id="3t" value="4" <?php if(isset($_SESSION)){if($_SESSION['tipo'] == 4) echo "selected";} ?>>Secretaria</option>
                                     </select>
                                 </div>
                                
-                                    <div class="form-item">
+                                    <div id="curso" class="form-item">
                                         <h2> Curso: </h2>
                                         <select name="curso">
                                              <option value="" >Nenhum</option>
@@ -181,6 +181,6 @@
                 </div>
             </div>
         </main>
-        <script type="text/javascript" src="../../JavaScript/script-senha.js"> </script>
+        <script type="text/javascript" src="../../JavaScript/script-senha.js"> 
     </body>
 </html>
