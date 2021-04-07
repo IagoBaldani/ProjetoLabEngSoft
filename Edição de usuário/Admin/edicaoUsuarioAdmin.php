@@ -2,6 +2,8 @@
 
 	include("../../conexao.php");
 	
+    /* javascript: if(confirm('Tem certeza que deseja deletar o usuário <?php echo $linha['nome']; ?> ?')) location.href='deletarUsuarioAdmin.php?usuario=<?php echo $codigo_usuario; ?>&id=<?php echo $id_usuario;?>';">
+    */
     $codigo_usuario = intval($_GET['usuario']);
     $id_usuario = intval($_GET['id']);
 		
@@ -174,15 +176,6 @@
                                 <input type="submit" id="cancela" name="cancela" value="Cancelar edição">
                         </div>
                     </form>
-                </div>
-                <div class="container2">
-                    <div class="deleta-box">
-                        <a href="javascript: if(confirm('Tem certeza que deseja deletar o usuário <?php echo $linha['nome']; ?> ?')) location.href='deletarUsuarioAdmin.php?usuario=<?php echo $codigo_usuario; ?>&id=<?php echo $id_usuario;?>';">
-                            <div class="deleta"> <img src="../../Imagens/delete-white-18dp.svg" height="30px">
-                                Deletar usuário 
-                            </div>
-                        </a>
-                    </div>
                 </div>
             </div>
         </main>

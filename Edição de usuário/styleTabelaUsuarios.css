@@ -24,13 +24,13 @@ main{
 /* *************************************************************************** */
 
 .menu{
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     width: 100px;
-    height: 100vh;
+    height: 100%;
     background-color: #33383B;
 }
 
@@ -83,7 +83,7 @@ main{
 /* *************************************************************************** */
 
 .principal{
-    height: 100vh;
+    height: 100%;
     flex: 1;
     display: flex;
     align-items: center;
@@ -99,8 +99,8 @@ main{
     display: flex;
     flex-direction: column;
     padding:30px;
-    height:100vh;
-    width: 1000px;
+    height:100%;
+    width: 1100px;
 }
 
 .container h1{
@@ -127,6 +127,7 @@ table td{
 }
 
 td a{
+    margin-right: 5px;
     display: inline-block;
     color: #1976D2;
     font-weight: bold;
@@ -138,6 +139,14 @@ td a{
 
 td a:hover{
     box-shadow: 0 0 10px #1976D2;
+}
+
+td a:nth-last-child(1){
+    color: #ff0000;
+}
+
+td a:nth-last-child(1):hover{
+    box-shadow: 0 0 10px #ff0000;
 }
 
 

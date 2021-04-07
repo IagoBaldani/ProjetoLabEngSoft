@@ -68,6 +68,7 @@
                                 ?></td>
                             <td>
                                 <a href="edicaoUsuarioAdmin.php?usuario=<?php echo $linha['cod_usuario']; ?>&id=<?php echo $id_usuario; ?>">Editar</a>
+                                <a href="">Excluir</a>
                             </td>
                         </tr>
                         <?php } while($linha = $sql_query->fetch_assoc()); ?>
