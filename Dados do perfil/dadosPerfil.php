@@ -63,7 +63,7 @@
                         
                         <div class="info-box">
                             <h2><?php if($dado['tipo']==2){echo 'Curso:'; }else{echo 'Tipo de conta:';} ?></h2>
-                            <p><?php if($dado['tipo']!=2){echo $linha2['tipo'];} ?></p>
+                            <p><?php if($dado['tipo']!=2){echo $linha2['tipo'];} else{echo $linha['nome'];}?></p>
                         </div>
                         
                 </div>

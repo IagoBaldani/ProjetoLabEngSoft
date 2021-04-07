@@ -37,6 +37,10 @@
 		if(!isset($erro)){
 			
 			$senha = md5(md5($_SESSION['senha']));
+
+            if($_SESSION['tipo']!=2){
+                $_SESSION['curso']=1;
+            }
 			
 			$sql_code = "INSERT INTO usuario (nome, senha, cpf, email, matricula, tipo, curso, datacadastro)
 							VALUES( '$_SESSION[nome]',
@@ -155,14 +159,13 @@
                                 </div>
 								<div id="curso" class="form-item">
                                         <h2> Curso: </h2>
-                                        <select name="curso">
-                                             <option value="" >Nenhum</option>
-                                             <option value="1" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 1) echo "selected";} ?>>Agronegócio</option>
-                                             <option value="2" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 2) echo "selected";} ?>>Analise e Desenvolvimento de Sistemas</option>
-                                             <option value="3" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 3) echo "selected";} ?>>Jogos Digitais</option>
-                                             <option value="4" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 4) echo "selected";} ?>>Segurança da Informação</option>
-                                             <option value="5" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 5) echo "selected";} ?>>Ciência de Dados</option>
-                                             <option value="6" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 6) echo "selected";} ?>>Gestão Empresarial</option>
+                                        <select name="curso" required>
+                                             <option value="2" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 2) echo "selected";} ?>>Agronegócio</option>
+                                             <option value="3" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 3) echo "selected";} ?>>Analise e Desenvolvimento de Sistemas</option>
+                                             <option value="4" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 4) echo "selected";} ?>>Jogos Digitais</option>
+                                             <option value="5" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 5) echo "selected";} ?>>Segurança da Informação</option>
+                                             <option value="6" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 6) echo "selected";} ?>>Ciência de Dados</option>
+                                             <option value="7" <?php if(isset($_SESSION)){if($_SESSION['curso'] == 7) echo "selected";} ?>>Gestão Empresarial</option>
                                         </select>
                                 </div>
                             </div>
