@@ -41,8 +41,19 @@
             if($_SESSION['tipo']!=2){
                 $_SESSION['curso']=1;
             }
+
+            if(isset($_FILES['arquivo'])){
+
+                $arquivo = $_FILES['arquivo'];
+                $extensao = pathinfo($arquivo['name'], PATHINFO_EXTENSION);
+                $arquivo_nome = md5(uniqid($arquivo['name'])).".".$extensao;
+                $diretorio = "../../Imagens/Upload/";
+
+                move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$arquivo_nome);
+
+            }
 			
-			$sql_code = "INSERT INTO usuario (nome, senha, cpf, email, matricula, tipo, curso, datacadastro)
+			$sql_code = "INSERT INTO usuario (nome, senha, cpf, email, matricula, tipo, curso, datacadastro, diretorio_imagem)
 							VALUES( '$_SESSION[nome]',
 									'$senha',
 									'$_SESSION[cpf]',
@@ -50,7 +61,8 @@
 									'$_SESSION[ra]',
 									'$_SESSION[tipo]',
 									'$_SESSION[curso]',
-                                     NOW()
+                                     NOW(),
+                                    '$arquivo_nome'
 									)";
 								
 									
@@ -118,7 +130,7 @@
 						echo"</div>";
 						}
 					?>
-                    <form method="POST">
+                    <form method="POST" enctype="multipart/form-data">
                         <div class="form-box">
                             <div class="formulario">
                                 <div class="form-item">
@@ -136,6 +148,10 @@
                                 <div class="form-item">
                                     <h2> RA (Registro do aluno):</h2>
                                     <input type="text" name="ra" value="<?php if(isset($_SESSION)){echo $_SESSION['ra'];} ?>">
+                                </div>
+                                <div class="form-item">
+                                    <h2> Imagem do perfil:</h2>
+                                    <input type="file" name="arquivo">
                                 </div>
                             </div>
                             <div class="formulario">
