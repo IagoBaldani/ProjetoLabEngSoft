@@ -48,30 +48,35 @@
                     <h1>Dados do perfil:</h1>
                     
                     <div class="info-box">
-                        <h2>Nome:<h2>
+                        <h2>Nome:</h2>
                         <p><?php echo $dado['nome'] ?></p>
                     </div>
                     <div class="info-box">
-                        <h2>Email:<h2>
+                        <h2>Email:</h2>
                         <p><?php echo $dado['email'] ?></p>
                     </div>
                     <div class="info-box">
-                        <h2>RA (Registro do Aluno): <h2>
+                        <h2>RA (Registro do Aluno): </h2>
                         <p><?php echo $dado['matricula'] ?></p>
-                    </div>
-                    
-                        
-                        <div class="info-box">
-                            <h2><?php if($dado['tipo']==2){echo 'Curso:'; }else{echo 'Tipo de conta:';} ?></h2>
-                            <p><?php if($dado['tipo']!=2){echo $linha2['tipo'];} else{echo $linha['nome'];}?></p>
-                        </div>
-                        
+                    </div>      
+                    <div class="info-box">
+                         <h2><?php if($dado['tipo']==2){echo 'Curso:'; }else{echo 'Tipo de conta:';} ?></h2>
+                         <p><?php if($dado['tipo']!=2){echo $linha2['tipo'];} else{echo $linha['nome'];}?></p>
+                    </div>       
                 </div>
                 <div class="container2">
+                    <div class="filler2"></div>
                     <div class="info-box">
-                        <h2>Data de cadastro: <h2>
-                        <p><?php echo $dado['datacadastro'] ?></p>
+                        <h2>Data de cadastro: </h2>
+                        <p><?php 
+                                $data = explode("-", $dado['datacadastro']);
+                                echo "$data[2]-$data[1]-$data[0]";
+                            ?></p>
                     </div>
+                    <div class="info-box last">
+                        <h2>Foto do Perfil:</h2>
+                        <?php echo"<img class='profile-box-img' src='../Imagens/Upload/$dado[diretorio_imagem]'>"; ?>
+                    </div>  
                 </div>
             </div>
         </main>

@@ -40,7 +40,7 @@
                 <div class="lower">
                     <div class="menu-box profile"><a> <img src="../Imagens/user.svg" height="40px"/> </a></div>
                     <div class="profile-box">
-                        <img class="profile-box-img" src=""> 
+                        <?php echo"<img class='profile-box-img' src='../Imagens/Upload/$dado[diretorio_imagem]'>"; ?> 
                         
                         <h1><?php echo $dado['nome']; ?></h1>
                         <h2><?php if($dado['tipo']==2){echo $linha['nome'];}else{echo $linha2['tipo'];}?></h2>

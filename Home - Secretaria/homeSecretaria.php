@@ -41,12 +41,12 @@
                 <div class="lower">
                     <div class="menu-box profile"><a> <img src="../Imagens/user.svg" height="40px"/> </a></div>
                     <div class="profile-box">
-                        <img class="profile-box-img" src="../Imagens/p-picture.jpeg"> 
+                        <?php echo"<img class='profile-box-img' src='../Imagens/Upload/$dado[diretorio_imagem]'>"; ?>
                         
                         <h1><?php echo $dado['nome']; ?></h1>
                         <h2><?php if($dado['tipo']==2){echo $linha['nome'];}else{echo $linha2['tipo'];}?></h2>
                     
-                        <a href="../Dados do perfil/index.php?id=<?php echo $id_usuario?>"><div class="profile-box-data"> 
+                        <a href="../Dados do perfil/dadosPerfil.php?id=<?php echo $id_usuario?>"><div class="profile-box-data"> 
                             <img src="../Imagens/article-white-18dp.svg" height="20px">
                             Dados do perfil
                         </div></a>
