@@ -9,8 +9,8 @@
     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
 
     if($sql_query)
-        echo "<script> alert('O usuário foi deletado com sucesso.'); location.href='../../Home - Secretaria/index.php?id={$id_usuario}'; </script>";
+        echo "<script> location.href='../../Confirmações/alertExcluir.php?id={$id_usuario}'; </script>";
     else
-        echo "<script> alert('Não foi possível deletar o usuário.'); location.href='../../Home - Secretaria/index.php?id={$id_usuario}'; </script>";
+        echo "<script> alert('Não foi possível deletar o usuário.'); location.href='../../Home - Secretaria/homeSecretaria.php?id={$id_usuario}'; </script>";
 
 ?>

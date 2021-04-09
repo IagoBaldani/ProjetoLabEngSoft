@@ -2,9 +2,9 @@
     
     include("../conexao.php");
 
-    $codigo_usuario = intval($_GET['id']);
+    $id_usuario = intval($_GET['id']);
 
-    $sql_code = "SELECT * FROM usuario WHERE cod_usuario = '$codigo_usuario'";
+    $sql_code = "SELECT * FROM usuario WHERE cod_usuario = '$id_usuario'";
     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
     $dado = $sql_query->fetch_assoc();
 

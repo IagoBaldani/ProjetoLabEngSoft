@@ -64,7 +64,7 @@
 					  $_SESSION['emai'],
 					  $_SESSION['ra']);
 					  
-					  echo"<script>alert('Usuário editado com sucesso!');  location.href='../../Home - Secretaria/homeSecretaria.php?id={$id_usuario}'; </script>";
+					  echo"<script> location.href='../../Confirmações/alertEdicao.php?id={$id_usuario}&usuario={$codigo_usuario}'; </script>";
 					  
 			}
 			else 
@@ -74,12 +74,7 @@
 		
 	}
 	else if(isset($_POST['cancela'])){
-		echo"   <script>
-            if(confirm('Deseja mesmo cancelar o cadastro?')){
-            location.href='../../Home - Secretaria/homeSecretaria.php?id={$id_usuario}';
-            }else{history.back()}
-          
-                </script>";
+		echo"<script> location.href='../../Confirmações/confirmEdicao.php?id={$id_usuario}&usuario={$codigo_usuario}'; </script>";
 	}
     else{
 
