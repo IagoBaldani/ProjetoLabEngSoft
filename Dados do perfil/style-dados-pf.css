@@ -17,6 +17,10 @@ main{
     display: flex
 }
 
+body{
+   background-color: #282C2E; 
+}
+
 /* *************************************************************************** */
 /* *************************************************************************** */
 /* Estilização do menu lateral */
@@ -127,6 +131,11 @@ main{
     flex: 1;
 }
 
-.container2 .info-box{
-    margin-top: 90px;
+.filler2{
+    height: 73.3px;
+    width: 100px;
+}
+
+.info-box img{
+    height: 200px;
 }

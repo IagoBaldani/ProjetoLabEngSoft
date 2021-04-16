@@ -70,7 +70,7 @@
                         <h2>Data de cadastro: </h2>
                         <p><?php 
                                 $data = explode("-", $dado['datacadastro']);
-                                echo "$data[2]-$data[1]-$data[0]";
+                                echo "$data[2]/$data[1]/$data[0]";
                             ?></p>
                     </div>
                     <div class="info-box last">

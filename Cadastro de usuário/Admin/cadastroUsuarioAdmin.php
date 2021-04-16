@@ -52,6 +52,7 @@
                 move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$arquivo_nome);
 
             }
+
 			
 			$sql_code = "INSERT INTO usuario (nome, senha, cpf, email, matricula, tipo, curso, datacadastro, diretorio_imagem)
 							VALUES( '$_SESSION[nome]',
