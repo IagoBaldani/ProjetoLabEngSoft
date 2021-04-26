@@ -11,11 +11,11 @@
     <body> 
         <aside> 
             <div class="menu">
-                <div class="menu-box home" id="home"><a> 
+                <div class="menu-box home" id="home"><a href="javascript:history.back()"> 
                     <div class="home-img"> <img src="../Imagens/home-white-18dp.svg" height="60px"/> </div>
                 </a></div>
 
-                <div class="menu-box" id="logout"><a> 
+                <div class="menu-box" id="logout"><a href="../logout.php">  
                     <img src="../Imagens/logout-white-18dp.svg" height="40px"/> 
                 </a></div>    
             </div>

@@ -83,164 +83,75 @@ main{
 /* *************************************************************************** */
 
 .principal{
-    height: 100vh;
+    height: 100%;
     flex: 1;
     display: flex;
-    align-items: center;
     background-color: #282C2E;
 }
 
 .filler{
     width: 100px;
-    height: 100%;
+    height: 100vh;
 }
 
 .container{
     display: flex;
     flex-direction: column;
-    padding:20px;
+    padding:30px;
     height:100%;
-    width: 70%;
+    width: 1100px;
 }
 
 .container h1{
     font-size: 60px;
-    font-weight: lighter;
     margin-bottom: 15px;
 }
 
-.container h2{
-    font-size: 30px;
-    font-weight: 900;
-    margin-bottom: 15px;
-    margin-top: 15px;
-}
-
-.form-box{
-    height: 460px;
+table{
+    background-color: #FFF;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    border-collapse: collapse;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
-.formulario{
-    display: flex;
-    flex-direction: column;
+table tr{
+    height: 50px;
 }
 
-.formulario input, .formulario select{
-    width: 375px;
-    height: 40px;
-    font-size: 20px;
-    color: #282C2E;
+table td{
+    color: #33383B;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+td a{
+    margin:5px;
+    display: inline-block;
+    color: #1976D2;
+    font-weight: bold;
+    background-color: #ddd;
     padding: 5px;
-    background-color: #fff;
-    border-style: none;
-}
-
-option{
-    color: #282C2E;
-}
-
-.submit-box{
-    display: flex;
-    height: 60px;
-    align-items: flex-end;
-    justify-content: space-between;
-}
-
-.submit-box input{
-    height: 40px;
-    width: 375px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 25px;
-    border-style: none;
-}
-
-.submit-box #confirma{
-    background-color: #20F808;
-}
-
-.submit-box #cancela{
-    background-color: #FF3D00;
-}
-
-
-.info-senha{
-    opacity: 0;
-    position: fixed;
-    background-color: #33383B;
-    display: flex;
-    padding: 10px;
-    width: 350px;
-    height: 75px;
-    top: 90px;
-    right: 170px;
-    align-items: center;
     border-radius: 10px;
-    box-shadow: 0 0 15px #333;
     transition: all linear 0.3s;
 }
 
-.i-senha{
-    cursor: pointer;
+td a:hover{
+    box-shadow: 0 0 10px #1976D2;
 }
 
-.container2{
-    height: 100vh;
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    align-items: flex-end;
+td a:nth-last-child(1){
+    color: #ff0000;
 }
 
-.deleta{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    width: 300px;
-    border-radius: 5px;
+td a:nth-last-child(1):hover{
+    box-shadow: 0 0 10px #ff0000;
+}
+
+
+.titulo td{
     font-weight: bold;
-    font-size: 25px;
-    border-style: none;
-    background-color: #FF0000;
-    margin-bottom: 10px;
+    font-size: 20px;
+    background-color: #ddd;
+    text-align: center;
 }
-
-.deleta img{
-    margin-right: 10px;
-}
-
-.info-box, .info-box2{
-    opacity: 0;
-    position: fixed;
-    background-color: #33383B;
-    display: flex;
-    padding: 10px;
-    width: 400px;
-    height: 55px;
-    margin: 5px;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #333;
-    transition: all linear 0.3s;
-}
-
-.info-box{
-    top: 100px;
-    left: 290px;
-}
-
-.info-box2{
-    top: 320px;
-    right: 40px;
-}
-
-.info, .info2{
-    cursor: pointer;
-}
-
-
-

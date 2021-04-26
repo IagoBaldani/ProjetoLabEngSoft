@@ -80,12 +80,12 @@
 
                     <h2>Manter artigos:</h2>
                     <div class="func">
-                        <a href=""><div class="func-box">
+                        <a href="../Cadastro de artigo/cadastroArtigo.php?id=<?php echo $id_usuario; ?>"><div class="func-box">
                             <img src="../Imagens/article-white-18dp.svg" height="75px">
                             <h2>Cadastrar artigo</h2>
                         </div></a>
 
-                        <a href=""><div class="func-box">
+                        <a href="../Edição de artigo/artigosCadastrados.php?id=<?php echo $id_usuario; ?>"><div class="func-box">
                             <img src="../Imagens/article-white-18dp.svg" height="75px">
                             <h2>Editar artigo</h2>
                         </div></a>

@@ -73,12 +73,21 @@
                                 echo "$data[2]/$data[1]/$data[0]";
                             ?></p>
                     </div>
-                    <div class="info-box last">
+                    <div class="info-box">
                         <h2>Foto do Perfil:</h2>
-                        <?php echo"<img class='profile-box-img' src='../Imagens/Upload/$dado[diretorio_imagem]'>"; ?>
-                    </div>  
+                        <?php echo"<img class='profile-box-img' src='../Imagens/Upload/$dado[diretorio_imagem]'>"; ?> </br>
+                        <button class="btnImg"> Editar imagem </button>
+                    </div>
+
+                    <div class="submit-box">
+                        <form method="POST" enctype="multipart/form-data">
+                            <input class="file" type="file" name="arquivo">
+                            <input class="submit" type="submit" value="Confirma">
+                        </form>
+                    </div>
                 </div>
             </div>
         </main>
+        <script src="../JavaScript/script-dadospf.js"> </script>
     </body>
 </html>

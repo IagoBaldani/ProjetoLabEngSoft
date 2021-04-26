@@ -56,9 +56,9 @@
                                     <input type="text" name="curso">
                                 </div>
                                 <div class="form-item">
-                                    <div class="info-box2"> Este campo deve seguir a seguinte máscara: <br/> Nome 1, Nome 2, Nome 3...</div>
                                     <h2> Avaliadores: <img class="info2" src="../Imagens/info-white-18dp.svg" height="20px"> </h2>
                                     <input type="text" name="email">
+                                    <div class="info-box2"> Este campo deve seguir a seguinte máscara: <br/> Nome 1, Nome 2, Nome 3...</div>
                                 </div>
                             </div>
                         </div>
@@ -67,13 +67,6 @@
                                 <input type="submit" id="cancela" value="Cancelar edição">
                         </div>
                     </form>
-                </div>
-                <div class="container2">
-                    <a href="">
-                        <div class="deleta"> <img src="../Imagens/delete-white-18dp.svg" height="30px">
-                            Deletar artigo 
-                        </div>
-                    </a>
                 </div>
             </div>
         </main>
