@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Abr-2021 às 02:54
+-- Tempo de geração: 27-Abr-2021 às 04:20
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.4.9
 
@@ -29,24 +29,25 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `artigos` (
   `cod_artigos` smallint(4) NOT NULL,
-  `autor` varchar(50) COLLATE utf8_bin NOT NULL,
+  `autores` varchar(50) COLLATE utf8_bin NOT NULL,
   `orientador` varchar(50) COLLATE utf8_bin NOT NULL,
-  `avaliador` varchar(50) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `status` int(11) NOT NULL DEFAULT 0,
-  `data` date NOT NULL,
+  `avaliadores` varchar(50) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `statusartigo` int(11) NOT NULL DEFAULT 0,
   `titulo` varchar(50) COLLATE utf8_bin NOT NULL,
   `curso` int(11) NOT NULL DEFAULT 0,
-  `diretorio_artigo` varchar(80) COLLATE utf8_bin NOT NULL
+  `diretorio_artigo` varchar(80) COLLATE utf8_bin NOT NULL,
+  `datacadastro` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Extraindo dados da tabela `artigos`
 --
 
-INSERT INTO `artigos` (`cod_artigos`, `autor`, `orientador`, `avaliador`, `status`, `data`, `titulo`, `curso`, `diretorio_artigo`) VALUES
-(1, 'Marcelo Bolfarini', 'Iago Baldani', 'Igor Santander', 1, '2021-03-16', 'Sistema Gerenciador de Artigos Cientificos', 2, ''),
-(2, 'Filipe Antunes', 'Gustavo Juliano', 'Marcelo Bolfarini', 2, '2021-03-16', 'Teste do Banco', 3, ''),
-(3, 'Iago Baldani', 'Igor Santander', 'Filipe Antunes', 3, '2021-03-16', 'Teste do Banco 2', 5, '');
+INSERT INTO `artigos` (`cod_artigos`, `autores`, `orientador`, `avaliadores`, `statusartigo`, `titulo`, `curso`, `diretorio_artigo`, `datacadastro`) VALUES
+(1, 'Marcelo Bolfarini', 'Iago Baldani', 'Igor Santander', 1, 'Sistema Gerenciador de Artigos Cientificos', 2, '', '2021-04-26'),
+(2, 'Filipe Antunes', 'Gustavo Juliano', 'Marcelo Bolfarini', 2, 'Teste do Banco', 3, '', '2021-04-26'),
+(3, 'Iago Baldani', 'Igor Santander', 'Filipe Antunes, Gustavo Juliano', 3, 'Teste Edição Artigo 1', 4, 'd2d1f70a0e4db88d05826d0d7348a0d8.pdf', '2021-04-26'),
+(6, 'Marcelo, Iago, Filipe', 'Igor Santander', 'Elaine, Gustavo', 1, 'Teste Cadastro Artigo 3', 3, '4ad39e1f5377e635d9932f44d209fb93.pdf', '2021-04-26');
 
 -- --------------------------------------------------------
 
@@ -142,7 +143,6 @@ INSERT INTO `usuario` (`cod_usuario`, `nome`, `senha`, `cpf`, `email`, `matricul
 (16, 'Igor Santander', '70873e8580c9900986939611618d7b1e', '333333333', 'igorsantander@gmail.com', '4444444444', 4, 1, '2021-03-25', ''),
 (18, 'Admin 1', '5d80253b1cd5e5d4ca5ed539f4d72052', '25444566658', 'admin1@gmail.com', '458854556998', 1, 1, '2021-03-26', ''),
 (19, 'Filipe Antunes', 'a567d260dcce27322dc9403161f8ab91', '25444555669', 'filipeantunes@gmail.com', '658554445558', 2, 4, '2021-03-26', ''),
-(20, 'Marcelo Bolfarini', '70873e8580c9900986939611618d7b1e', '54589658586', 'marcelobolfarini@gmail.com', '656585658566', 3, 1, '2021-03-26', ''),
 (22, 'Gustavo Juliano', '70873e8580c9900986939611618d7b1e', '554445588865', 'gustavojuliano@gmail.com', '55566558877444', 2, 5, '2021-03-27', ''),
 (26, 'Iago Baldani', '70873e8580c9900986939611618d7b1e', '545554445556', 'iagobaldani@gmail.com', '66555522211425', 2, 7, '2021-03-29', ''),
 (27, 'secretaria2', '70873e8580c9900986939611618d7b1e', '1214132455143', 'secretaria2@gmail.com', '13124123124123', 4, 1, '2021-04-06', ''),
@@ -150,7 +150,9 @@ INSERT INTO `usuario` (`cod_usuario`, `nome`, `senha`, `cpf`, `email`, `matricul
 (29, 'admin2', '5d80253b1cd5e5d4ca5ed539f4d72052', '124761278772387', 'admin2@gmail.com', '1827873188738787', 1, 1, '2021-04-06', ''),
 (30, 'admin3', '5d80253b1cd5e5d4ca5ed539f4d72052', '123451351231434', 'admin3@gmail.com', '123412321421314', 1, 1, '2021-04-06', ''),
 (31, 'admin4', '5d80253b1cd5e5d4ca5ed539f4d72052', '1290138918398938', 'admin4@gmail.com', '912891898198282918', 1, 1, '2021-04-06', ''),
-(32, 'Fulano da Silva', '70873e8580c9900986939611618d7b1e', '12841872878237', 'fulanodasilva@gmail.com', '7187878437187287', 2, 4, '2021-04-06', '');
+(33, 'teste imagem', '70873e8580c9900986939611618d7b1e', '11431982391829', 'testeimagem@gmail.com', '12983498918981982', 2, 4, '2021-04-07', '27598803b64a7ad5b69121676d2483bc.jpg'),
+(34, 'teste imagem 2', '70873e8580c9900986939611618d7b1e', '321424142143123', 'testeimagem2@gmail.com', '213412312412313', 4, 1, '2021-04-07', '84a7d8d0858069b5849dd21464c7c06a.jpg'),
+(36, 'Elaine', '70873e8580c9900986939611618d7b1e', '73619891623912', 'elaine@gmail.com', '7887378329899', 3, 1, '2021-04-13', 'eecad5996b79de249a68d57f3b2a5175.jpg');
 
 --
 -- Índices para tabelas despejadas
@@ -161,7 +163,7 @@ INSERT INTO `usuario` (`cod_usuario`, `nome`, `senha`, `cpf`, `email`, `matricul
 --
 ALTER TABLE `artigos`
   ADD PRIMARY KEY (`cod_artigos`),
-  ADD KEY `status` (`status`);
+  ADD KEY `status` (`statusartigo`) USING BTREE;
 
 --
 -- Índices para tabela `cursos`
@@ -197,13 +199,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `artigos`
 --
 ALTER TABLE `artigos`
-  MODIFY `cod_artigos` smallint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cod_artigos` smallint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `cursos`
 --
 ALTER TABLE `cursos`
-  MODIFY `cod_cursos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `cod_cursos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `statusartigo`
@@ -221,7 +223,7 @@ ALTER TABLE `tipousuario`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `cod_usuario` smallint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `cod_usuario` smallint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- Restrições para despejos de tabelas
@@ -231,7 +233,7 @@ ALTER TABLE `usuario`
 -- Limitadores para a tabela `artigos`
 --
 ALTER TABLE `artigos`
-  ADD CONSTRAINT `fkstatus` FOREIGN KEY (`status`) REFERENCES `statusartigo` (`cod_status`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `fkstatus` FOREIGN KEY (`statusartigo`) REFERENCES `statusartigo` (`cod_status`) ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `usuario`

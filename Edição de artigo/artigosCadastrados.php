@@ -51,36 +51,36 @@
                             do{
                         ?>
                         <tr>
-                            <td><?php echo $linha['autor']; ?></td>
+                            <td><?php echo $linha['autores']; ?></td>
                             <td><?php echo $linha['orientador']; ?></td>
-                            <td><?php echo $linha['avaliador']; ?></td>
+                            <td><?php echo $linha['avaliadores']; ?></td>
                             <td><?php echo $linha['titulo']; ?></td>
                             <td>
                                 <?php 
-                                    $data = explode("-", $linha['data']);
+                                    $data = explode("-", $linha['datacadastro']);
                                     echo "$data[2]/$data[1]/$data[0]";
                                 ?>
                             </td>
                             <td><?php 
-                                     if($linha['status']==1){
+                                     if($linha['statusartigo']==1){
                                          echo "Cadastrado";
                                      }
-                                     else if($linha['status']==2){
+                                     else if($linha['statusartigo']==2){
                                         echo "Em avaliação";
                                     }
-                                    else if($linha['status']==3){
+                                    else if($linha['statusartigo']==3){
                                         echo "Aprovado";
                                     }
-                                    else if($linha['status']==4){
+                                    else if($linha['statusartigo']==4){
                                         echo "Não aprovado";
                                     }
-                                    else if($linha['status']==5){
+                                    else if($linha['statusartigo']==5){
                                         echo "Publicado";
                                     }
                                 ?></td>
                             <td>
-                                <a href="edicaoArtigo.php?usuario=<?php echo $linha['cod_usuario']; ?>&id=<?php echo $id_usuario; ?>">Editar</a>
-                                <a href="../Confirmações/confirmExcluir.php?usuario=<?php echo $linha['cod_usuario']; ?>&id=<?php echo $id_usuario;?>">Excluir</a>
+                                <a href="edicaoArtigo.php?artigo=<?php echo $linha['cod_artigos']; ?>&id=<?php echo $id_usuario; ?>">Editar</a>
+                                <a href="../Confirmações/confirmExcluirArtigo.php?artigo=<?php echo $linha['cod_artigos']; ?>&id=<?php echo $id_usuario;?>">Excluir</a>
                             </td>
                         </tr>
                         <?php } while($linha = $sql_query->fetch_assoc()); ?>
