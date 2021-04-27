@@ -16,6 +16,28 @@
     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
     $linha2 = $sql_query->fetch_assoc();
 
+    if(isset($_POST['confirma'])){
+
+        if(isset($_FILES['arquivo'])){
+
+            $arquivo = $_FILES['arquivo'];
+            $extensao = pathinfo($arquivo['name'], PATHINFO_EXTENSION);
+            $arquivo_nome = md5(uniqid($arquivo['name'])).".".$extensao;
+            $diretorio = "../Imagens/Upload/";
+
+            move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$arquivo_nome);
+
+        }
+
+        $sql_code = "UPDATE usuario SET
+                diretorio_imagem = '$arquivo_nome'
+                WHERE cod_usuario = '$id_usuario'";
+								
+									
+		$mysqli->query($sql_code) or die($mysqli->error);
+
+    }
+
 ?>
 
 
@@ -82,7 +104,7 @@
                     <div class="submit-box">
                         <form method="POST" enctype="multipart/form-data">
                             <input class="file" type="file" name="arquivo">
-                            <input class="submit" type="submit" value="Confirma">
+                            <input class="submit" type="submit" name="confirma" value="Confirma">
                         </form>
                     </div>
                 </div>
