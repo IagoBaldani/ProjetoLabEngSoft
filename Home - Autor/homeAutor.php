@@ -15,8 +15,7 @@
     $sql_code = "SELECT tipo FROM tipousuario WHERE cod_tipo = '$dado[tipo]'";
     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
     $linha2 = $sql_query->fetch_assoc();
-
-
+    
 ?>
 
 <html>
@@ -62,7 +61,7 @@
                     <h1>Bem vindo(a), <?php echo $dado['nome']; ?>.</h1>
                     <h2>Funcionalidades:</h2>
                     <div class="func">
-                        <a href=""><div class="func-box">
+                        <a href="../Dados do Artigo - Autor/dadosArtigoAutor.php?id=<?php echo $id_usuario?>"><div class="func-box">
                             <img src="../Imagens/article-white-18dp.svg" height="100px">
                             <h2>Situação do <br/>artigo</h2>
                         </div></a>

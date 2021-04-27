@@ -45,6 +45,7 @@
                             <td>Título</td>
                             <td>Data</td>
                             <td>Status</td>
+                            <td>Arquivo</td>
                             <td>Ação</td>
                         </tr>
                         <?php 
@@ -78,6 +79,7 @@
                                         echo "Publicado";
                                     }
                                 ?></td>
+                            <td>  <a href="../Artigos/Upload/<?php echo $linha['diretorio_artigo']?>">PDF</a> </td>
                             <td>
                                 <a href="edicaoArtigo.php?artigo=<?php echo $linha['cod_artigos']; ?>&id=<?php echo $id_usuario; ?>">Editar</a>
                                 <a href="../Confirmações/confirmExcluirArtigo.php?artigo=<?php echo $linha['cod_artigos']; ?>&id=<?php echo $id_usuario;?>">Excluir</a>
