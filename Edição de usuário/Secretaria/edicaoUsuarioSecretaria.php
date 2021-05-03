@@ -146,7 +146,7 @@
                                 </div>
                                 <div class="form-item">
                                     <h2> CPF:</h2>
-                                    <input type="text" name="cpf" value="<?php echo $_SESSION['cpf']; ?>">
+                                    <input maxlength="14" onkeypress="formatar(this,'000.000.000-00')" type="text" name="cpf" value="<?php echo $_SESSION['cpf']; ?>">
                                 </div>
                                 <div class="form-item">
                                     <h2> RA (Registro do aluno):</h2>
@@ -173,6 +173,6 @@
                 </div>
             </div>
         </main>
-        <script type="text/javascript" src="../../JavaScript/script-senha.js"> </script>
+        <script type="text/javascript" src="../../JavaScript/script-cadastro.js"> </script>
     </body>
 </html>

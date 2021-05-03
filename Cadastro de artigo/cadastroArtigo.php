@@ -114,9 +114,9 @@ if(isset($_POST['confirma'])){
                                     </select>
                                 </div>
                                 <div class="form-item">
-                                    <div class="info-box2"> Este campo deve seguir a seguinte máscara: <br/> Nome 1, Nome 2, Nome 3...</div>
                                     <h2> Avaliadores: <img class="info2" src="../Imagens/info-white-18dp.svg" height="20px"> </h2>
                                     <input type="text" name="avaliadores">
+                                    <div class="info-box2"> Este campo deve seguir a seguinte máscara: <br/> Nome 1, Nome 2, Nome 3...</div>
                                 </div>
                             </div>
                         </div>
