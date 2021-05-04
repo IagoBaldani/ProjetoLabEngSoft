@@ -7,8 +7,6 @@
     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
     $linha = $sql_query->fetch_assoc();
 
-   
-
 ?>
 
 <html>
@@ -53,36 +51,46 @@
                         <?php 
                             do{
 
-                                $exaut = explode(', ', $linha['autores']);
-                                $cont = count($exaut);
-
-                                for($i=0;$i<$cont;$i++){
-                                    $sql_code = "SELECT nome FROM usuario WHERE matricula = '$exaut[$i]'";
-                                    $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
-                                    $nomeautor = $sql_query->fetch_assoc();
-                                    $vetorautor[$i] = $nomeautor['nome'];
-                                }
-
-                                $exaval = explode(', ', $linha['avaliadores']);
-                                $cont = count($exaval);
-
-                                for($i=0;$i<$cont;$i++){
-                                    $sql_code = "SELECT nome FROM usuario WHERE email = '$exaval[$i]'";
-                                    $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
-                                    $nomeavaliador = $sql_query->fetch_assoc();
-                                    $vetoravaliador[$i] = $nomeavaliador['nome'];
-                                }
-
-                                $sql_code = "SELECT nome FROM usuario WHERE email = '$linha[orientador]'";
-                                $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
-                                $nomeorientador = $sql_query->fetch_assoc();
-
-                        ?>
-                        
+                        ?>  
                         <tr>
-                            <td><?php foreach($vetorautor as $item){echo "• $item </br>"; } ?></td>
-                            <td><?php echo $nomeorientador['nome']; ?></td>
-                            <td><?php foreach($vetoravaliador as $item){echo "• $item </br>"; } ?></td>
+                            <td><?php
+                                    $exaut = explode(', ', $linha['autores']);
+                                    $cont = count($exaut);
+ 
+                                    for($i=0;$i<$cont;$i++){
+                                        $sql_code1 = "SELECT nome FROM usuario WHERE matricula = '$exaut[$i]'";
+                                        $sql_query1 = $mysqli->query($sql_code1) or die($mysqli->error);
+                                        $nomeautor = $sql_query1->fetch_assoc();
+                                        $vetorautor[$i] = $nomeautor['nome'];
+                                    }
+
+                                    foreach($vetorautor as $item1){echo "• $item1 </br>"; }
+                                    unset($vetorautor);
+                                ?></td>
+
+                            <td><?php 
+                                 $sql_code2 = "SELECT nome FROM usuario WHERE email = '$linha[orientador]'";
+                                 $sql_query2 = $mysqli->query($sql_code2) or die($mysqli->error);
+                                 $nomeorientador = $sql_query2->fetch_assoc();
+
+                                echo $nomeorientador['nome']; 
+                                ?></td>
+
+                            <td><?php
+                                    $exaval = explode(', ', $linha['avaliadores']);
+                                    $cont1 = count($exaval);
+ 
+                                 for($i=0;$i<$cont1;$i++){
+                                     $sql_code3 = "SELECT nome FROM usuario WHERE email = '$exaval[$i]'";
+                                     $sql_query3 = $mysqli->query($sql_code3) or die($mysqli->error);
+                                     $nomeavaliador = $sql_query3->fetch_assoc();
+                                     $vetoravaliador[$i] = $nomeavaliador['nome'];
+                                 }
+
+                                 foreach($vetoravaliador as $item2){echo "• $item2 </br>"; }
+                                 unset($vetoravaliador);
+                                ?></td>
+
                             <td><?php echo $linha['titulo']; ?></td>
                             <td>
                                 <?php 
@@ -113,7 +121,7 @@
                                 <a href="../Confirmações/confirmExcluirArtigo.php?artigo=<?php echo $linha['cod_artigos']; ?>&id=<?php echo $id_usuario;?>">Excluir</a>
                             </td>
                         </tr>
-                        <?php } while($linha = $sql_query->fetch_assoc()); ?>
+                        <?php }while($linha = $sql_query->fetch_assoc());  ?>
 
                     </table>
                
