@@ -17,6 +17,10 @@ main{
     display: flex
 }
 
+body{
+    background-color: #282C2E;
+}
+
 /* *************************************************************************** */
 /* *************************************************************************** */
 /* Estilização do menu lateral */
@@ -185,4 +189,10 @@ option{
 
 .i-senha{
     cursor: pointer;
+}
+
+.erro{
+    background-color: #FF3D00;
+    padding: 5px;
+    width: 280px;
 }

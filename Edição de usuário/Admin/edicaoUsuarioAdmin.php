@@ -15,7 +15,10 @@
 		
 		foreach($_POST as $chave=>$valor)
 			$_SESSION[$chave] = $mysqli->real_escape_string($valor);
-			
+
+        $sql_code = "SELECT email FROM usuario";
+        $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+        $verificaemail = $sql_query->fetch_assoc();
 		
 		//2 - Validação dos Dados
 		if(strlen($_SESSION['nome'])==0)
@@ -23,6 +26,13 @@
 		
 		if(substr_count($_SESSION['email'], '@') != 1 || substr_count($_SESSION['email'], '.') < 1 || substr_count($_SESSION['email'], '.') > 2)
 			$erro[] = "Preencha o email corretamente.";
+        
+        do{
+            if(strcmp($_SESSION['email'], $verificaemail['email']) == 0){
+                $erro[] = "Esse email já está cadastrado.";
+            }
+        
+        }while($verificaemail = $sql_query->fetch_assoc());
 		
 		if(strlen($_SESSION['cpf'])==0)
 			$erro[] = "Preencha o cpf.";
