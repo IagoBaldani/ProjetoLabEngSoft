@@ -110,7 +110,7 @@ main{
 }
 
 .container h2{
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 900;
     margin-bottom: 15px;
     margin-top: 15px;
@@ -129,9 +129,9 @@ main{
 }
 
 .formulario input, .formulario select{
-    width: 375px;
-    height: 40px;
-    font-size: 20px;
+    width: 280px;
+    height: 30px;
+    font-size: 15px;
     color: #282C2E;
     padding: 5px;
     border-style: none;
@@ -149,11 +149,11 @@ option{
 }
 
 .submit-box input{
-    height: 40px;
-    width: 375px;
+    height: 30px;
+    width: 280px;
     border-radius: 5px;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 20px;
     border-style: none;
 }
 
