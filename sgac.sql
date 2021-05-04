@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Tempo de geração: 04-Maio-2021 às 21:22
--- Versão do servidor: 10.4.13-MariaDB
--- versão do PHP: 7.4.7
+-- Host: 127.0.0.1
+-- Tempo de geração: 04-Maio-2021 às 23:15
+-- Versão do servidor: 10.4.14-MariaDB
+-- versão do PHP: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `artigos` (
   `cod_artigos` smallint(4) NOT NULL,
   `autores` varchar(50) COLLATE utf8_bin NOT NULL,
   `orientador` varchar(50) COLLATE utf8_bin NOT NULL,
-  `avaliadores` varchar(50) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `avaliadores` varchar(200) COLLATE utf8_bin NOT NULL DEFAULT '',
   `statusartigo` int(11) NOT NULL DEFAULT 0,
   `titulo` varchar(50) COLLATE utf8_bin NOT NULL,
   `curso` int(11) NOT NULL DEFAULT 0,
@@ -44,7 +44,7 @@ CREATE TABLE `artigos` (
 --
 
 INSERT INTO `artigos` (`cod_artigos`, `autores`, `orientador`, `avaliadores`, `statusartigo`, `titulo`, `curso`, `diretorio_artigo`, `datacadastro`) VALUES
-(9, '0210481913009, 0210481913025, 0210481913011', 'Sergio Roberto Delfino', 'Elaine Pascoalini', 1, 'Teste Cadastro Artigo 1', 3, 'bc1695ebe47609935afdd9a8d4dc3f43.', '2021-05-03');
+(10, '0210481913009, 0210481913025, 0210481913011', 'sergiodelfino@gmail.com', 'elainepascoalini@gmail.com, alexmarino@gmail.com, adalbertocrispim@gmail.com', 1, 'Symposium', 3, '05970c8485b760b219b7656b24edf586.pdf', '2021-05-04');
 
 -- --------------------------------------------------------
 
@@ -138,12 +138,15 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`cod_usuario`, `nome`, `senha`, `cpf`, `email`, `matricula`, `tipo`, `curso`, `datacadastro`, `diretorio_imagem`) VALUES
 (18, 'Admin', '5d80253b1cd5e5d4ca5ed539f4d72052', '111.222.333-44', 'admin@gmail.com', 'XXXXXXXXXXXXX', 1, 1, '2021-03-26', '2a8901545ef2347a8dc56c8518649e04.png'),
-(27, 'Secretaria', 'bb722beedadaae25656bf3f98f2d65c2', '111.222.333-44', 'secretaria@gmail.com', 'XXXXXXXXXXXXX', 4, 1, '2021-04-06', ''),
+(27, 'Secretaria', 'bb722beedadaae25656bf3f98f2d65c2', '111.222.333-44', 'secretaria@gmail.com', 'XXXXXXXXXXXXX', 4, 1, '2021-04-06', '6b70ee82996f6e8c73ae4d9bff828769.jpg'),
 (36, 'Elaine Pascoalini', '70873e8580c9900986939611618d7b1e', '555.666.777-88', 'elainepascoalini@gmail.com', 'XXXXXXXXXXXXX', 3, 1, '2021-04-13', 'eecad5996b79de249a68d57f3b2a5175.jpg'),
-(37, 'Filipe Antunes', '70873e8580c9900986939611618d7b1e', '856.544.588-55', 'filipeantunes@gmail.com', '0210481913009', 2, 3, '2021-05-03', '51f799c2a8504ecffb190b029cfe73a8.jpg'),
+(37, 'Filipe Antunes', '70873e8580c9900986939611618d7b1e', '856.544.588-55', 'filipeantunes@gmail.com', '0210481913009', 2, 3, '2021-05-03', 'd93d87c2da461ec455a784214ae62425.jpg'),
 (38, 'Iago Baldani', '70873e8580c9900986939611618d7b1e', '548.885.552-22', 'iagobaldani@gmail.com', '0210481913025', 2, 3, '2021-05-03', '194c3d71364db97fdb97595233d08f7c.jpeg'),
-(39, 'Igor Santander', '70873e8580c9900986939611618d7b1e', '254.488.885-52', 'igorsantander@gmail.com', '0210481913011', 2, 3, '2021-05-03', '28c5a2909f81dc94c8f5bf5f03fd7324.jpg'),
-(43, 'Alex Marino', '70873e8580c9900986939611618d7b1e', '333.444.555-66', 'alexmarino@gmail.com', 'XXXXXXXXXXXXX', 3, 1, '2021-05-04', '08f61c752f4b3db34f3a979faea162c3.jpg');
+(39, 'Igor Santander', '70873e8580c9900986939611618d7b1e', '254.488.885-52', 'igorsantander@gmail.com', '0210481913011', 2, 3, '2021-05-03', '41f16f448d5a25c3ec7424f3002b401f.jpg'),
+(43, 'Alex Marino', '70873e8580c9900986939611618d7b1e', '333.444.555-66', 'alexmarino@gmail.com', 'XXXXXXXXXXXXX', 3, 1, '2021-05-04', '08f61c752f4b3db34f3a979faea162c3.jpg'),
+(44, 'Sergio Roberto Delfino', '70873e8580c9900986939611618d7b1e', '365.885.458-85', 'sergiodelfino@gmail.com', 'XXXXXXXXXXXXX', 3, 1, '2021-05-04', '7a1abaffa0272b4e92e3685a24d1c9c7.webp'),
+(45, 'Adalberto Crispim', '70873e8580c9900986939611618d7b1e', '574.854.859-68', 'adalbertocrispim@gmail.com', 'XXXXXXXXXXXXX', 3, 1, '2021-05-04', '31550089a768fbf9899943265f9cb97c.jpg'),
+(46, 'Marcelo Bolfarini', '70873e8580c9900986939611618d7b1e', '598.187.945-98', 'marcelobolfarini@gmail.com', '0210481913038', 2, 3, '2021-05-04', 'f9d44e8e99c5dcb697bb5a01976af5f1.jpeg');
 
 --
 -- Índices para tabelas despejadas
@@ -190,7 +193,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `artigos`
 --
 ALTER TABLE `artigos`
-  MODIFY `cod_artigos` smallint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `cod_artigos` smallint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `cursos`
@@ -214,7 +217,7 @@ ALTER TABLE `tipousuario`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `cod_usuario` smallint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `cod_usuario` smallint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- Restrições para despejos de tabelas
