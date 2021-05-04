@@ -7,5 +7,5 @@ window.onload = function(){
         else{
             document.querySelector(".submit-box").style.display = "flex";
         }
-    });  
+    });
 }

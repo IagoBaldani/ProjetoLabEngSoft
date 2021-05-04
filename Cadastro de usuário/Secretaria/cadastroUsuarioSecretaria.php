@@ -24,7 +24,7 @@
 		if(strlen($_SESSION['cpf'])==0)
 			$erro[] = "Preencha o cpf.";
 		
-		if(strlen($_SESSION['ra'])==0)
+		if(strlen($_SESSION['ra']) == 0 && $_SESSION['tipo'] == 2)
 			$erro[] = "Preencha o RA.";
 		
 		if(strlen($_SESSION['senha'])< 8 || strlen($_SESSION['senha']) > 20)
@@ -55,7 +55,10 @@
                 $diretorio = "../../Imagens/Upload/";
 
                 move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$arquivo_nome);
+            }
 
+            if($_SESSION['tipo'] != 2 ){
+                $_SESSION['ra'] = "XXXXXXXXXXXXX";
             }
 			
 			$sql_code = "INSERT INTO usuario (nome, senha, cpf, email, matricula, tipo, curso, datacadastro, diretorio_imagem)
@@ -146,7 +149,7 @@
                                     <h2> CPF:</h2>
                                     <input maxlength="14" onkeypress="formatar(this,'000.000.000-00')" type="text" name="cpf" value="<?php if(isset($_SESSION)){echo $_SESSION['cpf'];} ?>">
                                 </div>
-                                <div class="form-item">
+                                <div id="ra" class="form-item">
                                     <h2> RA (Registro do aluno):</h2>
                                     <input maxlength="13" type="text" name="ra" value="<?php if(isset($_SESSION)){echo $_SESSION['ra'];} ?>">
                                 </div>
@@ -196,6 +199,6 @@
                 </div>
             </div>
         </main>
-        <script type="text/javascript" src="../../JavaScript/script-cadastro.js"> 
+        <script type="text/javascript" src="../../JavaScript/script-cadastro.js"> </script>
     </body>
 </html>

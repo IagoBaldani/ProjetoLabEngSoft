@@ -94,6 +94,7 @@
 		$_SESSION['cpf'] =  $linha['cpf'];
 		$_SESSION['email'] =  $linha['email'];
 		$_SESSION['ra'] =  $linha['matricula'];
+        $_SESSION['tipo'] =  $linha['tipo'];
    
 		
     }
@@ -150,10 +151,14 @@
                                     <h2> CPF:</h2>
                                     <input maxlength="14" onkeypress="formatar(this,'000.000.000-00')" type="text" name="cpf" value="<?php echo $_SESSION['cpf']; ?>">
                                 </div>
-                                <div class="form-item">
-                                    <h2> RA (Registro do aluno):</h2>
-                                    <input maxlength="13" type="text" name="ra" value="<?php echo $_SESSION['ra']; ?>">
-                                </div>
+                                <?php
+                                    if($_SESSION['tipo'] == 2){
+                                        echo "<div class='form-item'>";
+                                        echo "<h2> RA (Registro do aluno):</h2>"; 
+                                        echo "<input maxlength='13' type='text' name='ra' value=$_SESSION[ra] >";
+                                        echo "</div>";
+                                    }
+                                ?>
                             </div>
                             <div class="formulario">
                                 <div class="form-item">

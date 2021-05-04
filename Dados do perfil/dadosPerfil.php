@@ -77,12 +77,16 @@
                         <h2>Email:</h2>
                         <p><?php echo $dado['email'] ?></p>
                     </div>
+                    <?php
+                        if($dado['tipo'] == 2){
+                            echo "<div class='info-box' id='ra'>";
+                            echo "<h2>RA (Registro do Aluno): </h2>";
+                            echo "<p> $dado[matricula] </p>";
+                            echo "</div>";
+                        }
+                    ?>      
                     <div class="info-box">
-                        <h2>RA (Registro do Aluno): </h2>
-                        <p><?php echo $dado['matricula'] ?></p>
-                    </div>      
-                    <div class="info-box">
-                         <h2><?php if($dado['tipo']==2){echo 'Curso:'; }else{echo 'Tipo de conta:';} ?></h2>
+                         <h2 id="type"><?php if($dado['tipo']==2){echo 'Curso:'; }else{echo 'Tipo de conta:';} ?></h2>
                          <p><?php if($dado['tipo']!=2){echo $linha2['tipo'];} else{echo $linha['nome'];}?></p>
                     </div>       
                 </div>
