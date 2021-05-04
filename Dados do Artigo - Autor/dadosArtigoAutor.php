@@ -31,15 +31,27 @@
         $vetorautor[$i] = $nomeautor['nome'];
     }
 
-
     $sql_code = "SELECT * FROM artigos WHERE autores = '$imart'";
     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
     $dadosartigos = $sql_query->fetch_assoc();
-
     
     $sql_code = "SELECT statusartigo FROM statusartigo WHERE cod_status = '$dadosartigos[statusartigo]'";
     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
     $statusartigo = $sql_query->fetch_assoc();
+
+    $exaval = explode(', ', $dadosartigos['avaliadores']);
+    $cont = count($exaval);
+
+    for($i=0;$i<$cont;$i++){
+        $sql_code = "SELECT nome FROM usuario WHERE email = '$exaval[$i]'";
+        $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+        $nomeavaliador = $sql_query->fetch_assoc();
+        $vetoravaliador[$i] = $nomeavaliador['nome'];
+    }
+
+    $sql_code = "SELECT nome FROM usuario WHERE email = '$dadosartigos[orientador]'";
+    $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+    $nomeorientador = $sql_query->fetch_assoc();
 
 
 ?>
@@ -81,11 +93,11 @@
                     </div>
                     <div class="info-box">
                         <h2>Orientador: <h2>
-                        <p><?php echo $dadosartigos['orientador'] ?></p>
+                        <p><?php echo $nomeorientador['nome'] ?></p>
                     </div>
                     <div class="info-box">
                         <h2>Avaliadores: <h2>
-                        <p><?php echo $dadosartigos['avaliadores'] ?></p>
+                        <p><?php foreach($vetoravaliador as $item){echo "$item </br>"; } ?></p>
                     </div>
                 </div>
                 <div class="container2">

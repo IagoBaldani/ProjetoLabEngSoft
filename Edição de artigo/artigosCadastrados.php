@@ -53,20 +53,36 @@
                         <?php 
                             do{
 
-                                $exart = explode(', ', $linha['autores']);
-                                $cont = count($exart);
+                                $exaut = explode(', ', $linha['autores']);
+                                $cont = count($exaut);
 
                                 for($i=0;$i<$cont;$i++){
-                                    $sql_code = "SELECT nome FROM usuario WHERE matricula = '$exart[$i]'";
+                                    $sql_code = "SELECT nome FROM usuario WHERE matricula = '$exaut[$i]'";
                                     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
                                     $nomeautor = $sql_query->fetch_assoc();
                                     $vetorautor[$i] = $nomeautor['nome'];
                                 }
+
+                                $exaval = explode(', ', $linha['avaliadores']);
+                                $cont = count($exaval);
+
+                                for($i=0;$i<$cont;$i++){
+                                    $sql_code = "SELECT nome FROM usuario WHERE email = '$exaval[$i]'";
+                                    $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+                                    $nomeavaliador = $sql_query->fetch_assoc();
+                                    $vetoravaliador[$i] = $nomeavaliador['nome'];
+                                }
+
+                                $sql_code = "SELECT nome FROM usuario WHERE email = '$linha[orientador]'";
+                                $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+                                $nomeorientador = $sql_query->fetch_assoc();
+
                         ?>
+                        
                         <tr>
                             <td><?php foreach($vetorautor as $item){echo "• $item </br>"; } ?></td>
-                            <td><?php echo $linha['orientador']; ?></td>
-                            <td><?php echo $linha['avaliadores']; ?></td>
+                            <td><?php echo $nomeorientador['nome']; ?></td>
+                            <td><?php foreach($vetoravaliador as $item){echo "• $item </br>"; } ?></td>
                             <td><?php echo $linha['titulo']; ?></td>
                             <td>
                                 <?php 

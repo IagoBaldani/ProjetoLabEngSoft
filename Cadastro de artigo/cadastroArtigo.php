@@ -99,7 +99,7 @@ if(isset($_POST['confirma'])){
                             </div>
                             <div class="formulario">
                                 <div class="form-item">
-                                    <h2> Orientador: </h2>
+                                    <h2> Email do Orientador: </h2>
                                     <input type="text" name="orientador">
                                 </div>
                                 <div class="form-item">
@@ -114,9 +114,9 @@ if(isset($_POST['confirma'])){
                                     </select>
                                 </div>
                                 <div class="form-item">
-                                    <h2> Avaliadores: <img class="info2" src="../Imagens/info-white-18dp.svg" height="20px"> </h2>
+                                    <h2> Email dos Avaliadores: <img class="info2" src="../Imagens/info-white-18dp.svg" height="20px"> </h2>
                                     <input type="text" name="avaliadores">
-                                    <div class="info-box2"> Este campo deve seguir a seguinte máscara: <br/> Nome 1, Nome 2, Nome 3...</div>
+                                    <div class="info-box2"> Este campo deve seguir a seguinte máscara: <br/> Email 1, Email 2, Email 3</div>
                                 </div>
                             </div>
                         </div>
