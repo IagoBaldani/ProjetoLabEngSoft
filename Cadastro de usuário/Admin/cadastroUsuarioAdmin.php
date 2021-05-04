@@ -140,11 +140,11 @@
                                 </div>
                                 <div class="form-item">
                                     <h2> CPF:</h2>
-                                    <input  maxlength="14" onkeypress="formatar(this,'000.000.000-00')" type="text" name="cpf" value="<?php if(isset($_SESSION)){echo $_SESSION['cpf'];} ?>">
+                                    <input maxlength="14" onkeypress="formatar(this,'000.000.000-00')" type="text" name="cpf" value="<?php if(isset($_SESSION)){echo $_SESSION['cpf'];} ?>">
                                 </div>
                                 <div class="form-item">
                                     <h2> RA (Registro do aluno):</h2>
-                                    <input type="text" name="ra" value="<?php if(isset($_SESSION)){echo $_SESSION['ra'];} ?>">
+                                    <input maxlength="13" type="text" name="ra" value="<?php if(isset($_SESSION)){echo $_SESSION['ra'];} ?>">
                                 </div>
                                 <div class="form-item">
                                     <h2> Imagem do perfil:</h2>

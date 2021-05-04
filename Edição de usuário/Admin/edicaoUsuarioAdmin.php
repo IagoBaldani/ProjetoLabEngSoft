@@ -152,7 +152,7 @@
                                 </div>
                                 <div class="form-item">
                                     <h2> RA (Registro do aluno):</h2>
-                                    <input type="text" name="ra" value="<?php echo $_SESSION['ra']; ?>">
+                                    <input maxlength="13" type="text" name="ra" value="<?php echo $_SESSION['ra']; ?>">
                                 </div>
                             </div>
                             <div class="formulario">

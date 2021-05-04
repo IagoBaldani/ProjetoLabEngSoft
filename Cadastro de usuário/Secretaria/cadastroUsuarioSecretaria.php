@@ -148,7 +148,7 @@
                                 </div>
                                 <div class="form-item">
                                     <h2> RA (Registro do aluno):</h2>
-                                    <input type="text" name="ra" value="<?php if(isset($_SESSION)){echo $_SESSION['ra'];} ?>">
+                                    <input maxlength="13" type="text" name="ra" value="<?php if(isset($_SESSION)){echo $_SESSION['ra'];} ?>">
                                 </div>
                                 <div class="form-item">
                                     <h2> Imagem do perfil:</h2>

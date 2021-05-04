@@ -7,6 +7,8 @@
     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
     $linha = $sql_query->fetch_assoc();
 
+   
+
 ?>
 
 <html>
@@ -50,9 +52,19 @@
                         </tr>
                         <?php 
                             do{
+
+                                $exart = explode(', ', $linha['autores']);
+                                $cont = count($exart);
+
+                                for($i=0;$i<$cont;$i++){
+                                    $sql_code = "SELECT nome FROM usuario WHERE matricula = '$exart[$i]'";
+                                    $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+                                    $nomeautor = $sql_query->fetch_assoc();
+                                    $vetorautor[$i] = $nomeautor['nome'];
+                                }
                         ?>
                         <tr>
-                            <td><?php echo $linha['autores']; ?></td>
+                            <td><?php foreach($vetorautor as $item){echo "• $item </br>"; } ?></td>
                             <td><?php echo $linha['orientador']; ?></td>
                             <td><?php echo $linha['avaliadores']; ?></td>
                             <td><?php echo $linha['titulo']; ?></td>

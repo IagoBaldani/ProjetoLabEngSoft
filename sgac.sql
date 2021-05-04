@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Abr-2021 às 17:14
+-- Tempo de geração: 04-Maio-2021 às 03:36
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.4.9
 
@@ -44,8 +44,7 @@ CREATE TABLE `artigos` (
 --
 
 INSERT INTO `artigos` (`cod_artigos`, `autores`, `orientador`, `avaliadores`, `statusartigo`, `titulo`, `curso`, `diretorio_artigo`, `datacadastro`) VALUES
-(7, 'Filipe Antunes, Marcelo Bolfarini, Iago Baldani', 'Igor Santander', 'Elaine, Gustavo Juliano', 1, 'Teste Dados do Artigo 1', 3, 'e9e729a1638da009d73cb4d471d388fb.pdf', '2021-04-27'),
-(8, 'Igor Santander, Gustavo Juliano, Luis Gustavo', 'Marcelo Bolfarini', 'Filipe Antunes, Iago Baldani', 1, 'Teste Exibição de PDF', 4, '5363f5ede82e63fef4193fed76105494.pdf', '2021-04-27');
+(9, '0210481913009, 0210481913025, 0210481913011', 'Sergio Roberto Delfino', 'Elaine', 1, 'Teste Cadastro Artigo 1', 3, 'c8f16f7a16bd50fe575622e7b726feb7.pdf', '2021-05-03');
 
 -- --------------------------------------------------------
 
@@ -138,19 +137,17 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`cod_usuario`, `nome`, `senha`, `cpf`, `email`, `matricula`, `tipo`, `curso`, `datacadastro`, `diretorio_imagem`) VALUES
-(16, 'Igor Santander', '70873e8580c9900986939611618d7b1e', '333333333', 'igorsantander@gmail.com', '4444444444', 4, 1, '2021-03-25', ''),
 (18, 'Admin 1', '5d80253b1cd5e5d4ca5ed539f4d72052', '25444566658', 'admin1@gmail.com', '458854556998', 1, 1, '2021-03-26', '2a8901545ef2347a8dc56c8518649e04.png'),
-(19, 'Filipe Antunes', 'a567d260dcce27322dc9403161f8ab91', '25444555669', 'filipeantunes@gmail.com', '658554445558', 2, 4, '2021-03-26', 'be2a4e78f69e50c7b14ff90a9d0057c2.jpg'),
-(22, 'Gustavo Juliano', '70873e8580c9900986939611618d7b1e', '554445588865', 'gustavojuliano@gmail.com', '55566558877444', 2, 5, '2021-03-27', ''),
-(26, 'Iago Baldani', '70873e8580c9900986939611618d7b1e', '545554445556', 'iagobaldani@gmail.com', '66555522211425', 2, 7, '2021-03-29', ''),
 (27, 'secretaria2', '70873e8580c9900986939611618d7b1e', '1214132455143', 'secretaria2@gmail.com', '13124123124123', 4, 1, '2021-04-06', ''),
 (28, 'avaliador1', '70873e8580c9900986939611618d7b1e', '124214134513123', 'avaliador1@gmail.com', '131234214314123', 3, 1, '2021-04-06', 'd753f2bc5d0bbe2f939f0c8121b83f14.png'),
 (29, 'admin2', '5d80253b1cd5e5d4ca5ed539f4d72052', '124761278772387', 'admin2@gmail.com', '1827873188738787', 1, 1, '2021-04-06', ''),
 (30, 'admin3', '5d80253b1cd5e5d4ca5ed539f4d72052', '123451351231434', 'admin3@gmail.com', '123412321421314', 1, 1, '2021-04-06', ''),
 (31, 'admin4', '5d80253b1cd5e5d4ca5ed539f4d72052', '1290138918398938', 'admin4@gmail.com', '912891898198282918', 1, 1, '2021-04-06', ''),
-(33, 'teste imagem', '70873e8580c9900986939611618d7b1e', '11431982391829', 'testeimagem@gmail.com', '12983498918981982', 2, 4, '2021-04-07', '27598803b64a7ad5b69121676d2483bc.jpg'),
 (34, 'teste imagem 2', '70873e8580c9900986939611618d7b1e', '321424142143123', 'testeimagem2@gmail.com', '213412312412313', 4, 1, '2021-04-07', '84a7d8d0858069b5849dd21464c7c06a.jpg'),
-(36, 'Elaine', '70873e8580c9900986939611618d7b1e', '73619891623912', 'elaine@gmail.com', '7887378329899', 3, 1, '2021-04-13', 'eecad5996b79de249a68d57f3b2a5175.jpg');
+(36, 'Elaine', '70873e8580c9900986939611618d7b1e', '73619891623912', 'elaine@gmail.com', '7887378329899', 3, 1, '2021-04-13', 'eecad5996b79de249a68d57f3b2a5175.jpg'),
+(37, 'Filipe Antunes', '70873e8580c9900986939611618d7b1e', '856.544.588-55', 'filipeantunes@gmail.com', '0210481913009', 2, 3, '2021-05-03', '51f799c2a8504ecffb190b029cfe73a8.jpg'),
+(38, 'Iago Baldani', '70873e8580c9900986939611618d7b1e', '548.885.552-22', 'iagobaldani@gmail.com', '0210481913025', 2, 3, '2021-05-03', 'a466168a0af673480e4fb8fbcd8e79b3.webp'),
+(39, 'Igor Santander', '70873e8580c9900986939611618d7b1e', '254.488.885-52', 'igorsantander@gmail.com', '0210481913011', 2, 3, '2021-05-03', '28c5a2909f81dc94c8f5bf5f03fd7324.jpg');
 
 --
 -- Índices para tabelas despejadas
@@ -197,7 +194,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `artigos`
 --
 ALTER TABLE `artigos`
-  MODIFY `cod_artigos` smallint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `cod_artigos` smallint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `cursos`
@@ -221,7 +218,7 @@ ALTER TABLE `tipousuario`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `cod_usuario` smallint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `cod_usuario` smallint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- Restrições para despejos de tabelas

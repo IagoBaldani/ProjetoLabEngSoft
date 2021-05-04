@@ -8,18 +8,29 @@
     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
     $dado = $sql_query->fetch_assoc();
 
-    $sql_code = "SELECT autores FROM artigos ";
+    $sql_code = "SELECT * FROM artigos ";
     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
     $artigos = $sql_query->fetch_assoc();
 
     do{
         $exart = explode(', ', $artigos['autores']);
+        $cont = count($exart);
 
-        if((strcmp($dado['nome'], $exart[0]) == 0) || (strcmp($dado['nome'], $exart[1]) == 0) || (strcmp($dado['nome'], $exart[2]) == 0)){
-            $imart = implode($exart, ', '); 
+        for($i=0;$i<$cont;$i++){
+            if(strcmp($dado['matricula'], $exart[$i]) == 0){
+                $imart = implode($exart, ', ');
+            }
         }
 
     }while($artigos = $sql_query->fetch_assoc());
+
+    for($i=0;$i<$cont;$i++){
+        $sql_code = "SELECT nome FROM usuario WHERE matricula = '$exart[$i]'";
+        $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+        $nomeautor = $sql_query->fetch_assoc();
+        $vetorautor[$i] = $nomeautor['nome'];
+    }
+
 
     $sql_code = "SELECT * FROM artigos WHERE autores = '$imart'";
     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
@@ -66,7 +77,7 @@
                     </div>
                     <div class="info-box">
                         <h2>Autores:<h2>
-                        <p><?php echo $dadosartigos['autores'] ?></p>
+                        <p><?php foreach($vetorautor as $item){echo "$item </br>"; } ?></p>
                     </div>
                     <div class="info-box">
                         <h2>Orientador: <h2>
@@ -86,12 +97,12 @@
                     <div class="info-box">
                         <h2>Data de envio: <h2>
                         <?php $dataenvio = explode('-', $dadosartigos['datacadastro'])?>
-                        <p><?php echo  "$dataenvio[2]-$dataenvio[1]-$dataenvio[0]";?></p>
+                        <p><?php echo  "$dataenvio[2]/$dataenvio[1]/$dataenvio[0]";?></p>
                     </div>
                     <div class="info-box">
                         <h2>Arquivo: <h2>
                         <a href="../Artigos/Upload/<?php echo $dadosartigos['diretorio_artigo']?>"> 
-                            <div class="download"> Arquivo.pdf </div>
+                            <div class="download"> Artigo.pdf </div>
                         </a>
                     </div>
                     <div class="info-box">

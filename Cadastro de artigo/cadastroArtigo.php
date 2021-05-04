@@ -84,9 +84,9 @@ if(isset($_POST['confirma'])){
                         <div class="form-box">
                             <div class="formulario">
                                 <div class="form-item">
-                                    <h2>Autores: <img class="info" src="../Imagens/info-white-18dp.svg" height="20px"> </h2>
+                                    <h2>RA dos Autores: <img class="info" src="../Imagens/info-white-18dp.svg" height="20px"> </h2>
                                     <input type="text" name="autores">
-                                    <div class="info-box"> Este campo deve seguir a seguinte máscara: <br/> Nome 1, Nome 2, Nome 3...</div>
+                                    <div class="info-box"> Este campo deve seguir a seguinte máscara: <br/> RA 1, RA 2, RA 3...</div>
                                 </div>
                                 <div class="form-item">
                                     <h2> Título:</h2>
