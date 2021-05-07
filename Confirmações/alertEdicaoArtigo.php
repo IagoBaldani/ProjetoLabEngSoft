@@ -23,7 +23,9 @@
             <div class="container">
                 <img src="../Imagens/check_circle_outline_white_36dp.svg"/>
                 <h1> O artigo foi editado com sucesso! </h1>
-                <a class="a0" href="<?php if($dado['tipo']==1){echo '../Home - Admin/homeAdmin.php?id=';echo $id_usuario;}else{echo '../Home - Secretaria/homeSecretaria.php?id=';echo $id_usuario;} ?>" >Continuar</a>
+                <a class="a0" href="<?php if($dado['tipo']==1){echo '../Home - Admin/homeAdmin.php?id=';echo $id_usuario;}
+                                          else if($dado['tipo']==4){echo '../Home - Secretaria/homeSecretaria.php?id=';echo $id_usuario;}
+                                          else if($dado['tipo']==3){echo '../Home - Avaliador_Orientador/homeAvaliadorOrientador.php?id=';echo $id_usuario;} ?>" >Continuar</a>
             </div>
         </main>
     </body>

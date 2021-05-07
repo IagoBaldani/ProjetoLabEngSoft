@@ -59,28 +59,26 @@
                 <div class="filler"></div>
                 <div class="container">
                     <h1>Bem vindo(a), <?php echo $dado['nome']; ?>.</h1>
-                    <h2>Funcionalidades:</h2>
+                    </br>
+                    <h2>Funcionalidades - Orientador:</h2>
                     <div class="func">
-                        <a href=""><div class="func-box first">
+                        <a href="../Dados do artigo - Orientador/situaçãoArtigos.php?id=<?php echo $id_usuario ?>"><div class="func-box first">
                             <img src="../Imagens/article-white-18dp.svg" height="75px">
                             <h2>Situação dos artigos</h2>
                         </div></a>
 
+                        <a href="../Cadastro de artigo/cadastroArtigo.php?id=<?php $id_usuario ?>"><div class="func-box first">
+                            <img src="../Imagens/article-white-18dp.svg" height="75px">
+                            <h2>Cadastrar artigo</h2>
+                        </div></a>
+                    </div>
+                    </br>
+                    <h2>Funcionalidades - Avaliador:</h2>
+                    <div class="func">
                         <a href=""><div class="func-box last">
                             <img src="../Imagens/article-white-18dp.svg" height="75px">
                             <h2>Avaliar artigo</h2>
                         </div></a>
-                    </div>
-
-                    <div class="func">
-                        <a href=""><div class="func-box first">
-                            <img src="../Imagens/article-white-18dp.svg" height="75px">
-                            <h2>Cadastrar artigo</h2>
-                        </div></a>
-                        <a href=""><div class="func-box last">
-                            <img src="../Imagens/article-white-18dp.svg" height="75px">
-                            <h2>Editar artigo</h2>
-                        </div></a> 
                     </div>
                 </div>
             </div>

@@ -95,11 +95,13 @@ else{
     <body> 
         <aside> 
             <div class="menu">
-                <div class="menu-box home" id="home"><a href="<?php if($dado['tipo']==1){echo '../Home - Admin/homeAdmin.php?id=';echo $id_usuario;}else{echo '../Home - Secretaria/homeSecretaria.php?id=';echo $id_usuario;}?>"> 
+                <div class="menu-box home" id="home"><a href="<?php if($dado['tipo']==1){echo '../Home - Admin/homeAdmin.php?id=';echo $id_usuario;}
+                                                                    else if($dado['tipo']==4){echo '../Home - Secretaria/homeSecretaria.php?id=';echo $id_usuario;}
+                                                                    else if($dado['tipo']==3){echo '../Home - Avaliador_Orientador/homeAvaliadorOrientador.php?id=';echo $id_usuario;}?>"> 
                     <div class="home-img"> <img src="../Imagens/home-white-18dp.svg" height="60px"/> </div>
                 </a></div>
 
-                <div class="menu-box" id="logout"><a> 
+                <div class="menu-box" id="logout"><a href="../logout.php"> 
                     <img src="../Imagens/logout-white-18dp.svg" height="40px"/> 
                 </a></div>    
             </div>

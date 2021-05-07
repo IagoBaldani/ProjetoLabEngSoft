@@ -26,8 +26,13 @@
                 <img src="../Imagens/information.svg"/>
                 <h1> Deseja mesmo cancelar a edição?</h1>
                 <div class="submit-box">
-                    <a class="a1" href="<?php if($dado['tipo']==1){echo '../Home - Admin/homeAdmin.php?id=';echo $id_usuario;}else{echo '../Home - Secretaria/homeSecretaria.php?id=';echo $id_usuario;} ?>" >OK</a>
-                    <a class="a2" href="<?php if($dado['tipo']==1){echo '../Edição de artigo/edicaoArtigo.php?id=';echo $id_usuario;echo'&artigo=';echo $codigo_artigo;}else{echo '../Edição de artigo/edicaoArtigo.php?id=';echo $id_usuario;echo'&artigo=';echo $codigo_artigo;} ?>" >Cancelar</a>
+                    <a class="a1" href="<?php if($dado['tipo']==1){echo '../Home - Admin/homeAdmin.php?id=';echo $id_usuario;}
+                                              else if($dado['tipo']==4){echo '../Home - Secretaria/homeSecretaria.php?id=';echo $id_usuario;}
+                                              else if($dado['tipo']==3){echo '../Home - Avaliador_Orientador/homeAvaliadorOrientador.php?id=';echo $id_usuario;} ?>" >OK</a>
+
+                    <a class="a2" href="<?php if($dado['tipo']==1){echo '../Edição de artigo/edicaoArtigo.php?id=';echo $id_usuario;echo'&artigo=';echo $codigo_artigo;}
+                                              else if($dado['tipo']==4){echo '../Edição de artigo/edicaoArtigo.php?id=';echo $id_usuario;echo'&artigo=';echo $codigo_artigo;}
+                                              else if($dado['tipo']==3){echo '../Edição de artigo/edicaoArtigo.php?id=';echo $id_usuario;echo'&artigo=';echo $codigo_artigo;} ?>" >Cancelar</a>
                 </div>
             </div>
         </main>
