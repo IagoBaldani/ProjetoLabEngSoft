@@ -7,9 +7,16 @@
     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
     $dadosorientador = $sql_query->fetch_assoc();
 
+
     $sql_code = "SELECT * FROM artigos WHERE orientador = '$dadosorientador[email]'";
     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
     $linha = $sql_query->fetch_assoc();
+
+    
+    if(!isset($linha)){
+        header('Location:../Confirmações/artigoNaoEncontrado.php');
+        die();
+    }
 
 ?>
 

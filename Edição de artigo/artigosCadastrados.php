@@ -7,6 +7,11 @@
     $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
     $linha = $sql_query->fetch_assoc();
 
+    if(!isset($linha)){
+        header('Location:../Confirmações/artigoNaoEncontrado.php');
+        die();
+    }
+
 ?>
 
 <html>

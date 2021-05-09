@@ -24,6 +24,11 @@
 
     }while($artigos = $sql_query->fetch_assoc());
 
+    if(!isset($imart)){
+        header('Location:../Confirmações/artigoNaoEncontrado.php');
+        die();
+    }
+
     for($i=0;$i<$cont;$i++){
         $sql_code = "SELECT nome FROM usuario WHERE matricula = '$exart[$i]'";
         $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
